@@ -13,6 +13,8 @@ namespace CliffPortfolio.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+
+
         }
 
         protected override void Seed(CliffPortfolio.Models.ApplicationDbContext context)
