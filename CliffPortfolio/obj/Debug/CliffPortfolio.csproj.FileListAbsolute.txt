@@ -1,0 +1,158 @@
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\ApplicationInsights.config
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\CliffPortfolio.dll.config
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\CliffPortfolio.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\CliffPortfolio.pdb
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Antlr3.Runtime.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\EntityFramework.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\EntityFramework.SqlServer.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.Web.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.WindowsServer.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.ApplicationInsights.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Google.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Web.Infrastructure.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Newtonsoft.Json.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Owin.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Net.Http.Formatting.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Helpers.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Http.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Http.Owin.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Http.WebHost.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Mvc.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Optimization.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Razor.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.WebPages.Deployment.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.WebPages.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.WebPages.Razor.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\WebGrease.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Antlr3.Runtime.pdb
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\EntityFramework.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\EntityFramework.SqlServer.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Google.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Newtonsoft.Json.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Net.Http.Formatting.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Helpers.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Http.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Http.Owin.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Http.WebHost.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Mvc.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Optimization.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.Razor.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.WebPages.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.WebPages.Deployment.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\System.Web.WebPages.Razor.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.ApplicationInsights.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.WindowsServer.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.Web.xml
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\obj\Debug\CliffPortfolio.csprojResolveAssemblyReference.cache
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\obj\Debug\CliffPortfolio.csproj.CoreCompileInputs.cache
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\obj\Debug\CliffPortfolio.dll
+c:\users\cgk30\source\repos\CliffPortfolio\CliffPortfolio\obj\Debug\CliffPortfolio.pdb
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\ApplicationInsights.config
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\CliffPortfolio.dll.config
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\CliffPortfolio.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\CliffPortfolio.pdb
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Antlr3.Runtime.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\EntityFramework.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\EntityFramework.SqlServer.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.Web.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.ApplicationInsights.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Newtonsoft.Json.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Owin.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Net.Http.Formatting.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Helpers.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Http.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Http.Owin.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Http.WebHost.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Mvc.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Optimization.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Razor.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.WebPages.Deployment.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.WebPages.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.WebPages.Razor.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\WebGrease.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Antlr3.Runtime.pdb
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\EntityFramework.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\EntityFramework.SqlServer.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Newtonsoft.Json.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Net.Http.Formatting.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Helpers.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Http.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Http.Owin.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Http.WebHost.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Mvc.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Optimization.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.Razor.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.WebPages.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.WebPages.Deployment.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Web.WebPages.Razor.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.ApplicationInsights.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AI.Web.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\obj\Debug\CliffPortfolio.csprojResolveAssemblyReference.cache
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\obj\Debug\CliffPortfolio.csproj.CoreCompileInputs.cache
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\obj\Debug\CliffPortfolio.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\obj\Debug\CliffPortfolio.pdb
