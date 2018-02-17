@@ -242,17 +242,17 @@
     <Compile Include="Controllers\CliffBlogPostsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Content Include="Views\Account\ConfirmationSent.cshtml" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BlogComment.cs" />
     <Compile Include="Models\CliffBlogPost.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ImageUploadValidator.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\MeViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -686,6 +686,7 @@
     <Content Include="Views\BlogComments\Edit.cshtml" />
     <Content Include="Views\BlogComments\Index.cshtml" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
+    <Content Include="Views\Account\ResendEmailConfirmation.cshtml" />
     <None Include="Views\Home\index.cshtml" />
     <Content Include="Assets\HTML\js\bootstrap.min.js" />
     <Content Include="Assets\HTML\js\grid.js" />
@@ -838,6 +839,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

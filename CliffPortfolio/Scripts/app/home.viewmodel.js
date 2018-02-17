@@ -13,9 +13,9 @@
                 headers: {
                     'Authorization': 'Bearer ' + app.dataModel.getAccessToken()
                 },
-                success: function (data) {
-                    self.myHometown('Your Hometown is : ' + data.hometown);
-                }
+                //success: function (data) {
+                //    self.myHometown('Your Hometown is : ' + data.hometown);
+                //}
             });
         });
         this.get('/', function () { this.app.runRoute('get', '#home'); });

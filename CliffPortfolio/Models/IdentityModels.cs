@@ -20,7 +20,7 @@ namespace CliffPortfolio.Models
         public string DisplayName { get; set; }
 
         public virtual ICollection<BlogComment> BlogComments { get; set; }
-        public string Hometown { get; set; }
+        
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
