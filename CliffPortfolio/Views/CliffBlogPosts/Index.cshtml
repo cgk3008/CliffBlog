@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<CliffPortfolio.Models.CliffBlogPost>
-
+Cliffblogpost
 @{
 	ViewBag.Title = "Index";
 }
@@ -52,11 +52,11 @@
 
 	@Html.Raw(item.Body) @*(modelItem => item.Body)*@
 
-	@Html.DisplayFor(modelItem => item.MediaUrl)
+	@Html.DisplayFor(modelItem => item.MediaURL)
 
-	@*if (Model.MediaUrl != null) //changed MediaURL to MediaUrl
-		{<img class ="img-responsive" src="@Model.MediaUrl" alt=""> //changed MediaURL to MediaUrl
-		}*@
+	//if (Model.MediaURL != null) //changed MediaURL to MediaUrl
+	//	{<img class ="img-responsive" src="@Model.MediaURL" alt=""> //changed MediaURL to MediaUrl
+	//	}
 
 	//@Html.DisplayFor(modelItem => item.Published)
 
@@ -64,8 +64,8 @@
 
 	@Html.ActionLink("Edit", "Edit", new { id = item.Id })
 
-	@Html.ActionLink("Details", "Details", new { id = item.Id })
-	//@Html.ActionLink("Details", "Details", new { slug = item.Slug })
+	//@Html.ActionLink("Details", "Details", new { id = item.Id })
+	@Html.ActionLink("Details", "Details", new { slug = item.Slug })
 
 	@Html.ActionLink("Delete", "Delete", new { id = item.Id })
 
@@ -73,6 +73,9 @@
 
 
 }
+
+
+
 
 @*</table>*@
 

@@ -24,7 +24,7 @@ namespace CliffPortfolio
 
             routes.MapRoute(
                 name: "NewSlug", 
-                url: "Blog/{slug}", 
+                url: "CliffBlogPosts/Details/{slug}", 
                 defaults: new { controller = "CliffBlogPosts", action = "Details", slug = UrlParameter.Optional });
 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");

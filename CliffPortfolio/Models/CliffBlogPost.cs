@@ -14,7 +14,7 @@ namespace CliffPortfolio.Models
         public string Title { get; set; }
         [AllowHtml]
         public string Body { get; set; }
-        public string MediaUrl { get; set; }
+        public string MediaURL { get; set; }
         public bool Published { get; set; }
         public string Slug { get; set; }  //can type "prop" then tab tab to setup these, a little faster
 

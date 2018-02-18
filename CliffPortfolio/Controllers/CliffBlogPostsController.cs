@@ -16,7 +16,7 @@ namespace CliffPortfolio.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        
+
         // GET: CliffBlogPosts
         public ActionResult Index()
         {
@@ -25,23 +25,23 @@ namespace CliffPortfolio.Controllers
 
         // GET: CliffBlogPosts/Details/5
 
-        public ActionResult Details(int? id)           
+        public ActionResult Details(string Slug)
         {
-            if (id == null)
+            if (String.IsNullOrWhiteSpace(Slug))
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CliffBlogPost cliffBlogPost = db.Posts.Find(id);
-            if (cliffBlogPost == null)
+            CliffBlogPost cliffBlogPosts = db.Posts.FirstOrDefault(p => p.Slug == Slug); 
+            if (cliffBlogPosts == null)
             {
                 return HttpNotFound();
             }
-            return View(cliffBlogPost);
+            return View(cliffBlogPosts);
         }
 
         // GET: CliffBlogPosts/Create
         [Authorize(Roles = "Admin, Moderator")]
-        
+
 
         public ActionResult Create()
         {
@@ -53,38 +53,39 @@ namespace CliffPortfolio.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Body,MediaUrl,Published,Slug")] CliffBlogPost cliffBlogPost, HttpPostedFileBase image)
+        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Body,MediaUrl,Published,Slug")] CliffBlogPost cliffBlogPosts, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
-                var Slug = StringUtilities.URLFriendly(cliffBlogPost.Title);
+                var Slug = StringUtilities.URLFriendly(cliffBlogPosts.Title);
                 if (String.IsNullOrWhiteSpace(Slug))
                 {
                     ModelState.AddModelError("Title", "Invalid title");
-                    return View(cliffBlogPost);
+                    return View(cliffBlogPosts);
                 }
                 if (db.Posts.Any(p => p.Slug == Slug))
                 {
                     ModelState.AddModelError("Title", "The title must be unique");
-                    return View(cliffBlogPost);
+                    return View(cliffBlogPosts);
                 }
-                cliffBlogPost.Slug = Slug;
+
 
                 if (ImageUploadValidator.IsWebFriendlyImage(image))
                 {
                     var fileName = Path.GetFileName(image.FileName); //clicked light bulb for using System.IO;
                     image.SaveAs(Path.Combine(Server.MapPath("~/Uploads/"), fileName)); //clicked light bulb for using System.IO;
-                    cliffBlogPost.MediaUrl = "/Uploads/" + fileName; } //change URL to Url
+                    cliffBlogPosts.MediaURL = "/Uploads/" + fileName; //change URL to Url??
+                }
 
-                cliffBlogPost.Created = DateTime.Now;
-
-                db.Posts.Add(cliffBlogPost);
+                cliffBlogPosts.Slug = Slug;
+                cliffBlogPosts.Created = DateTime.Now;
+                db.Posts.Add(cliffBlogPosts);
                 //db.Posts.Add(image);  // do I need this line?  I added, seems like I do but get squiggles under image
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(cliffBlogPost);
+            return View(cliffBlogPosts);
         }
 
         // GET: CliffBlogPosts/Edit/5
@@ -94,12 +95,12 @@ namespace CliffPortfolio.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CliffBlogPost cliffBlogPost = db.Posts.Find(id);
-            if (cliffBlogPost == null)
+            CliffBlogPost cliffBlogPosts = db.Posts.Find(id);
+            if (cliffBlogPosts == null)
             {
                 return HttpNotFound();
             }
-            return View(cliffBlogPost);
+            return View(cliffBlogPosts);
         }
 
         // POST: CliffBlogPosts/Edit/5
@@ -107,7 +108,7 @@ namespace CliffPortfolio.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Created,Updated,Title,Body,MediaUrl,Published,Slug")] CliffBlogPost cliffBlogPost, HttpPostedFileBase image)
+        public ActionResult Edit([Bind(Include = "Id,Created,Updated,Title,Body,MediaUrl,Published,Slug")] CliffBlogPost cliffBlogPosts, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
@@ -116,15 +117,15 @@ namespace CliffPortfolio.Controllers
                 {
                     var fileName = Path.GetFileName(image.FileName); //clicked light bulb for using System.IO;
                     image.SaveAs(Path.Combine(Server.MapPath("~/Uploads/"), fileName)); //clicked light bulb for using System.IO;
-                    cliffBlogPost.MediaUrl = "/Uploads/" + fileName;
+                    cliffBlogPosts.MediaURL = "/Uploads/" + fileName;
                 } //change URL to Url
 
-                db.Entry(cliffBlogPost).State = EntityState.Modified;
+                db.Entry(cliffBlogPosts).State = EntityState.Modified;
                 //db.Posts.Add(image);  // do I need this line?  I added, seems like I do but get squiggles under image
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(cliffBlogPost);
+            return View(cliffBlogPosts);
         }
 
         // GET: CliffBlogPosts/Delete/5
@@ -134,12 +135,12 @@ namespace CliffPortfolio.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CliffBlogPost cliffBlogPost = db.Posts.Find(id);
-            if (cliffBlogPost == null)
+            CliffBlogPost cliffBlogPosts = db.Posts.Find(id);
+            if (cliffBlogPosts == null)
             {
                 return HttpNotFound();
             }
-            return View(cliffBlogPost);
+            return View(cliffBlogPosts);
         }
 
         // POST: CliffBlogPosts/Delete/5
@@ -147,8 +148,8 @@ namespace CliffPortfolio.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            CliffBlogPost cliffBlogPost = db.Posts.Find(id);
-            db.Posts.Remove(cliffBlogPost);
+            CliffBlogPost cliffBlogPosts = db.Posts.Find(id);
+            db.Posts.Remove(cliffBlogPosts);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
