@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using CliffPortfolio.Helpers;
 using CliffPortfolio.Models;
 
 namespace CliffPortfolio.Controllers
@@ -26,11 +27,6 @@ namespace CliffPortfolio.Controllers
 
         public ActionResult Details(int? id)
         {
-
-
-
-
-
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -61,18 +57,18 @@ namespace CliffPortfolio.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var Slug = StringUtilities.URLFriendly(blogPost.Title);
-                //if (String.IsNullOrWhiteSpace(Slug))
-                //{
-                //    ModelState.AddModelError("Title", "Invalid title");
-                //    return View(blogPost);
-                //}
-                //if (db.Posts.Any(p => p.Slug == Slug))
-                //{
-                //    ModelState.AddModelError("Title", "The title must be unique");
-                //    return View(blogPost);
-                //}
-                //blogPost.Slug = Slug;
+                var Slug = StringUtilities.URLFriendly(cliffBlogPost.Title);
+                if (String.IsNullOrWhiteSpace(Slug))
+                {
+                    ModelState.AddModelError("Title", "Invalid title");
+                    return View(cliffBlogPost);
+                }
+                if (db.Posts.Any(p => p.Slug == Slug))
+                {
+                    ModelState.AddModelError("Title", "The title must be unique");
+                    return View(cliffBlogPost);
+                }
+                cliffBlogPost.Slug = Slug;
 
                 if (ImageUploadValidator.IsWebFriendlyImage(image))
                 {

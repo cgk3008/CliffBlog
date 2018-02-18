@@ -245,6 +245,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\StringUtilities.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Content Include="Views\Account\ConfirmationSent.cshtml" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -836,10 +837,10 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Views\Shared\BlogTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Helpers\" />
     <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
