@@ -138,8 +138,5 @@ namespace CliffPortfolio.Helpers
                 return "";
             }
         }
-
-
-
     }
 }
