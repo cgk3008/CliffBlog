@@ -43,32 +43,29 @@ Cliffblogpost
 		<th></th>
 	</tr>*@
 
-@foreach (var item in Model)
-{
+@*@foreach (var item in Model)
+	{
+		@Html.DisplayFor(modelItem => item.Title)
 
+		@Html.Raw(item.Body) //(modelItem => item.Body)
 
+		@Html.DisplayFor(modelItem => item.MediaURL)
 
-	@Html.DisplayFor(modelItem => item.Title)
+		//if (Model.MediaURL != null) //changed MediaURL to MediaUrl
+		//	{<img class ="img-responsive" src="@Model.MediaURL" alt=""> //changed MediaURL to MediaUrl
+		//	}
 
-	@Html.Raw(item.Body) //(modelItem => item.Body)
+		//@Html.DisplayFor(modelItem => item.Published)
 
-	@Html.DisplayFor(modelItem => item.MediaURL)
+		//@Html.DisplayFor(modelItem => item.Slug)
 
-	//if (Model.MediaURL != null) //changed MediaURL to MediaUrl
-	//	{<img class ="img-responsive" src="@Model.MediaURL" alt=""> //changed MediaURL to MediaUrl
-	//	}
+		@Html.ActionLink("Edit", "Edit", new { id = item.Id })
 
-	//@Html.DisplayFor(modelItem => item.Published)
+		//@Html.ActionLink("Details", "Details", new { id = item.Id })
+		@Html.ActionLink("Details", "Details", new { slug = item.Slug })
 
-	//@Html.DisplayFor(modelItem => item.Slug)
-
-	@Html.ActionLink("Edit", "Edit", new { id = item.Id })
-
-	//@Html.ActionLink("Details", "Details", new { id = item.Id })
-	@Html.ActionLink("Details", "Details", new { slug = item.Slug })
-
-	@Html.ActionLink("Delete", "Delete", new { id = item.Id })
-}
+		@Html.ActionLink("Delete", "Delete", new { id = item.Id })
+	}*@
 
 <html lang="en">
 <head>
@@ -79,25 +76,18 @@ Cliffblogpost
 
 
 	<!-- Font -->
-
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
-
 	<!-- Stylesheets -->
-
 	<link href="~//Assets/blog bootstrap -bona/common-css/bootstrap.css" rel="stylesheet">
-
 	<link href="~//Assets/blog bootstrap -bona/common-css/ionicons.css" rel="stylesheet">
-
-
 	<link href="~//Assets/blog bootstrap -bona/layout-1/css/styles.css" rel="stylesheet">
-
 	<link href="~/Assets/blog bootstrap -bona/layout-1/css/responsive.css" rel="stylesheet">
 
 </head>
 <body>
 
-	<header>
+	@*<header>
 		<div class="container-fluid position-relative no-side-padding">
 
 			<a href="#" class="logo"><img src="~/Assets/blog bootstrap -bona/images/logo.png" alt="Logo Image"></a>
@@ -118,44 +108,65 @@ Cliffblogpost
 			</div>
 
 		</div><!-- conatiner -->
-	</header>
+	</header>*@
 
 	<div class="slider"></div><!-- slider -->
+	@*//string BlogPostMaxLength(this string value, int maxLength)
+	//{
+	//	if (value == null)
+	//	{
+	//		return null;
+	//	}
+	//	if (maxLength < 0)
+	//	{
+	//		return "";
+	//	}
+	//	return value.Substring(0, Math.Min(value.Length, maxLength));
+	//}
+
+	//BlogPostMaxLength(item.Body, 30);
 
 
-	@foreach (var item in Model)
-	{
-		@Html.DisplayFor(modelItem => item.Title)
+	//if (item.Body.Length > 30)
+	//{
+	//	item.Body = string.Concat(item.Body.Substring(0, 30), "...");
+	//}
+	//else
+	//{
+	//	item.Body = item.Body;
+	//}*@
 
-		@Html.Raw(item.Body) @*(modelItem => item.Body)*@
 
-		@Html.DisplayFor(modelItem => item.MediaURL)
-
-		@Html.ActionLink("Edit", "Edit", new { id = item.Id })
-
-		
-
-		@Html.ActionLink("Delete", "Delete", new { id = item.Id })
-		<section class="blog-area section">
-			<div class="container">
-
-				<div class="row">
-
+	<section class="blog-area section">
+		<div class="container">
+			<div class="row">
+				@foreach (var item in Model)
+				{
 					<div class="col-lg-4 col-md-6">
 						<div class="card h-100">
 							<div class="single-post post-style-1">
 
+								@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+								{
+									@Html.ActionLink("Edit", "Edit", new { id = item.Id });
+									<b>------</b>
+									@Html.ActionLink("Delete", "Delete", new { id = item.Id });
+									<b>------</b>
+									@Html.DisplayFor(modelItem => item.Slug);
+								}
 								@*<div class="blog-image"><img src="@Html.DisplayFor(modelItem => item.MediaURL)" alt="Blog Image"></div>*@
 								<div class="blog-image"><img src="@item.MediaURL" alt="Blog Image"></div>
 								<div class="blog-info">
 
 									<h4 class="title">
-										<a href="@Html.Raw(item.Body)" @Html.ActionLink("Details", "Details", new { slug = item.Slug })>
-											<b>
-												
-											</b>
-										</a>
+										@Html.ActionLink(item.Title, "Details", new { slug = item.Slug })
 									</h4>
+									@Html.Raw(item.Body)
+
+
+									<b>
+
+									</b>
 
 									<ul class="post-footer">
 										<li><a href="#"><i class="ion-heart"></i>57</a></li>
@@ -167,14 +178,15 @@ Cliffblogpost
 							</div><!-- single-post -->
 						</div><!-- card -->
 					</div><!-- col-lg-4 col-md-6 -->
-				</div><!-- col-lg-8 col-md-12 -->
+				}
+			</div><!-- col-lg-8 col-md-12 -->
 
-			</div><!-- row -->
+		</div><!-- row -->
 
 
-		</section><!-- section -->
+	</section><!-- section -->
 
-	}
+
 	<div class="col-lg-4 col-md-6">
 		<div class="card h-100">
 			<div class="single-post post-style-1">
@@ -599,14 +611,19 @@ Cliffblogpost
 		<script src="~/Assets/blog bootstrap -bona/common-js/scripts.js"></script>
 
 	</body>
+
 </html>
-
-
-
-
-
-
-
 	}
-
+	public static string WithMaxLength(this string value, int maxLength)
+	{
+	if (value == null)
+	{
+	return null;
+	}
+	if (maxLength < 0)
+	{
+	return "";
+	}
+	return value.Substring(0, Math.Min(value.Length, maxLength));
+	}
 

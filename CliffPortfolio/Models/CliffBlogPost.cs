@@ -25,7 +25,18 @@ namespace CliffPortfolio.Models
             Comments = new HashSet<BlogComment>();
 
         }
-
+        //public static string BlogPostMaxLength(this string value, int maxLength)
+        //{
+        //    if (value == null)
+        //    {
+        //        return null;
+        //    }
+        //    if (maxLength < 0)
+        //    {
+        //        return "";
+        //    }
+        //    return value.Substring(0, Math.Min(value.Length, maxLength));
+        //}
 
     }
 }
