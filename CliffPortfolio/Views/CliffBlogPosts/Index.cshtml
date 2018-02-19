@@ -50,7 +50,7 @@ Cliffblogpost
 
 	@Html.DisplayFor(modelItem => item.Title)
 
-	@Html.Raw(item.Body) @*(modelItem => item.Body)*@
+	@Html.Raw(item.Body) //(modelItem => item.Body)
 
 	@Html.DisplayFor(modelItem => item.MediaURL)
 
@@ -68,10 +68,6 @@ Cliffblogpost
 	@Html.ActionLink("Details", "Details", new { slug = item.Slug })
 
 	@Html.ActionLink("Delete", "Delete", new { id = item.Id })
-
-
-
-
 }
 
 <html lang="en">
@@ -149,13 +145,14 @@ Cliffblogpost
 						<div class="card h-100">
 							<div class="single-post post-style-1">
 
+								@*<div class="blog-image"><img src="@Html.DisplayFor(modelItem => item.MediaURL)" alt="Blog Image"></div>*@
 								<div class="blog-image"><img src="@item.MediaURL" alt="Blog Image"></div>
 								<div class="blog-info">
 
 									<h4 class="title">
-										<a @Html.ActionLink("Details", "Details", new { slug = item.Slug })>
+										<a href="@Html.Raw(item.Body)" @Html.ActionLink("Details", "Details", new { slug = item.Slug })>
 											<b>
-												@Html.Raw(item.Body)
+												
 											</b>
 										</a>
 									</h4>
