@@ -39,16 +39,18 @@
 		</dt>
 
 		<dd>
-			@Html.DisplayFor(model => model.Body)
+			@*@Html.DisplayFor(model => model.Body)  copied code from Index pasted below, had to change item to Model*@
+
+			@Html.Raw(Model.Body)
+
 		</dd>
 
 		<dt>
 			@Html.DisplayNameFor(model => model.MediaURL)
 
-		if (Model.MediaURL != null)
-			{
+		
 			<img class="img-responsive" src="@Model.MediaURL" alt=""> 
-			}
+			
 		</dt>
 
 
@@ -75,8 +77,11 @@
 	</dl>
 </div>
 <p>
-
-	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+	@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+	{
+		@Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+	}
+	|
 	@Html.ActionLink("Back to List", "Index")
 </p>
 

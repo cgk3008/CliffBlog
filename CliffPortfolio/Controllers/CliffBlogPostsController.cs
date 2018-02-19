@@ -89,6 +89,9 @@ namespace CliffPortfolio.Controllers
         }
 
         // GET: CliffBlogPosts/Edit/5
+
+       
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -129,6 +132,7 @@ namespace CliffPortfolio.Controllers
         }
 
         // GET: CliffBlogPosts/Delete/5
+         
         public ActionResult Delete(int? id)
         {
             if (id == null)
