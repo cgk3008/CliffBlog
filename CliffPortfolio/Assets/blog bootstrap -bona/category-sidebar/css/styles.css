@@ -117,10 +117,10 @@ header .visible.main-menu{ display: block; }
 
 /* SEARCH AREA */
 
-header .src-area{ position: relative; height: 60px; width: 50%; float: right; display: inline-block; background: #F5F7F6; }
+header .src-area{ position: relative; height: 60px; width: 30%; float: right; display: inline-block; background: #F5F7F6; }
 
 header .src-area .src-input{ position: absolute; top: 0; bottom: 0; left: 0; right: 0; width: 100%;
-	padding: 0 20px 0 70px; background: transparent; border: 0; outline: 0; }
+	padding: 0 20px 0 50px; background: transparent; border: 0; outline: 0; }
 
 header .src-area .src-input:focus{ box-shadow: 0px 0px 1px #aaa; }
 
