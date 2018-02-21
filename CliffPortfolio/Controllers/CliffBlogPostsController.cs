@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.Mvc;
 using CliffPortfolio.Helpers;
 using CliffPortfolio.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace CliffPortfolio.Controllers
 {
@@ -18,10 +20,53 @@ namespace CliffPortfolio.Controllers
 
 
         // GET: CliffBlogPosts
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(db.Posts.ToList());
+
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+
+            //IQueryable<CliffBlogPost> listPosts = db.Posts.AsQueryable();
+
+            var listPosts = db.Posts.AsQueryable();
+            //OrderByDescending
+            return View(listPosts.OrderByDescending(i => i.Created).ToPagedList(pageNumber, pageSize));
         }
+
+        [HttpPost]
+        public ActionResult Index(string searchStr, int? page)
+        {
+            var result = db.Posts.Where(p => p.Body.Contains(searchStr))
+                .Union(db.Posts.Where(p => p.Title.Contains(searchStr)))
+                .Union(db.Posts.Where(p => p.Comments.Any(c => c.Body.Contains(searchStr))))
+                .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.DisplayName.Contains(searchStr))))
+                .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.FirstName.Contains(searchStr))))
+                .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.LastName.Contains(searchStr))))
+                //.Union(db.Posts.Where(p => p.Comments.Any(c => c.Email.Contains(searchStr))))
+                 .Union(db.Posts.Where(p => p.Comments.Any(c => c.UpdateReason.Contains(searchStr))));
+
+            //var listPosts = db.Posts.AsQueryable(); //thought i needed db.CliffBlogPosts not db.Posts...see IdentityModels...set database value of a blog post to Posts  ---  public DbSet<CliffBlogPost> Posts { get; set; }
+            //listPosts = listPosts.Where(p => p.Title.Contains(searchStr)) ||
+            //    p.Body.Contains(searchStr) ||
+            //    p.Comments.Any(c => c.Body.Contains(searchStr) ||
+            //                           c.Author.FirstName.Contains(searchStr) ||
+            //                           c.Author.DisplayName.Contains(searchStr) ||
+            //                           c.Author.LastName.Contains(searchStr) ||
+            //                           c.Email.Contains(searchStr) ||
+            //                           c.UpdateReason.Contains(searchStr));
+            
+            //OK so when I hit next page after search for "t" or just one letter that should return almost every post, it resets to Index view with just 3 blog posts with all blogs posts listed.
+
+            //Also, when search then click on blog post from search, go to details, should I put a back to search button/text link? same as back to list/index
+
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+
+            return View(result.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
+
+            //return View(listPosts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
+        }
+
 
         // GET: CliffBlogPosts/Details/5
 
@@ -31,7 +76,7 @@ namespace CliffPortfolio.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CliffBlogPost cliffBlogPosts = db.Posts.FirstOrDefault(p => p.Slug == Slug); 
+            CliffBlogPost cliffBlogPosts = db.Posts.FirstOrDefault(p => p.Slug == Slug);
             if (cliffBlogPosts == null)
             {
                 return HttpNotFound();
@@ -88,9 +133,7 @@ namespace CliffPortfolio.Controllers
             return View(cliffBlogPosts);
         }
 
-        // GET: CliffBlogPosts/Edit/5
-
-       
+        // GET: CliffBlogPosts/Edit/5       
 
         public ActionResult Edit(int? id)
         {
@@ -132,7 +175,7 @@ namespace CliffPortfolio.Controllers
         }
 
         // GET: CliffBlogPosts/Delete/5
-         
+
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -152,7 +195,7 @@ namespace CliffPortfolio.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            CliffBlogPost cliffBlogPosts = db.Posts.Find(id);
+            CliffBlogPost cliffBlogPosts = db.Posts.Find(id); //.FirstOrDefault (finds first of whatever name or number searching for, see PowerPoint) rather than .Find if we don't have id.  delete all records with string or id, use .Where
             db.Posts.Remove(cliffBlogPosts);
             db.SaveChanges();
             return RedirectToAction("Index");

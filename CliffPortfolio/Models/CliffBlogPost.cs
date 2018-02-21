@@ -17,6 +17,7 @@ namespace CliffPortfolio.Models
         public string MediaURL { get; set; }
         public bool Published { get; set; }
         public string Slug { get; set; }  //can type "prop" then tab tab to setup these, a little faster
+        //public string CommentBody { get; set; }
 
         public virtual ICollection<BlogComment> Comments { get; set; }  //navigation property, expects a class that defines objects, "list of T" name for collections.
 
@@ -25,6 +26,7 @@ namespace CliffPortfolio.Models
             Comments = new HashSet<BlogComment>();
 
         }
+
         //public static string BlogPostMaxLength(this string value, int maxLength)
         //{
         //    if (value == null)

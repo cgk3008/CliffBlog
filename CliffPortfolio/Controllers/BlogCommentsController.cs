@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CliffPortfolio.Models;
+using Microsoft.AspNet.Identity;
 
 namespace CliffPortfolio.Controllers
 {
@@ -49,12 +50,16 @@ namespace CliffPortfolio.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,PostId,AuthorId,Body,Created,Updated,UpdateReason")] BlogComment blogComment)
+        public ActionResult Create([Bind(Include = "Id,PostId,Comments")] BlogComment blogComment)  /*changed "Id,PostId,Body"*/
         {
             if (ModelState.IsValid)
             {
+                blogComment.AuthorId = User.Identity.GetUserId();
+                blogComment.Created = DateTime.Now;
+
                 db.Comments.Add(blogComment);
                 db.SaveChanges();
+                var bp = db.Comments.Include("Post").FirstOrDefault(c => c.Id == blogComment.Id);
                 return RedirectToAction("Index");
             }
 

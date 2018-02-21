@@ -156,3 +156,7 @@ C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\Cli
 C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\obj\Debug\CliffPortfolio.csproj.CoreCompileInputs.cache
 C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\obj\Debug\CliffPortfolio.dll
 C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\obj\Debug\CliffPortfolio.pdb
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\PagedList.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\PagedList.Mvc.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\PagedList.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\PagedList.Mvc.xml

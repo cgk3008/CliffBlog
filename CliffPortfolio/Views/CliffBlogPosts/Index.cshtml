@@ -1,8 +1,15 @@
-﻿@model IEnumerable<CliffPortfolio.Models.CliffBlogPost>
+﻿@using PagedList;
+@using PagedList.Mvc;
 
+@model IPagedList<CliffPortfolio.Models.CliffBlogPost> 
+	
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
 	ViewBag.Title = "Index";
 }
+
+
+
 
 <h2>Blog Index</h2>
 
@@ -17,58 +24,6 @@
 </p>
 
 }
-
-
-
-@*<table class="table">
-	<tr>
-		<th>
-			@Html.DisplayNameFor(model => model.Created)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.Updated)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.Title)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.Body)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.MediaUrl)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.Published)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.Slug)
-		</th>
-		<th></th>
-	</tr>*@
-
-@*@foreach (var item in Model)
-	{
-		@Html.DisplayFor(modelItem => item.Title)
-
-		@Html.Raw(item.Body) //(modelItem => item.Body)
-
-		@Html.DisplayFor(modelItem => item.MediaURL)
-
-		//if (Model.MediaURL != null) //changed MediaURL to MediaUrl
-		//	{<img class ="img-responsive" src="@Model.MediaURL" alt=""> //changed MediaURL to MediaUrl
-		//	}
-
-		//@Html.DisplayFor(modelItem => item.Published)
-
-		//@Html.DisplayFor(modelItem => item.Slug)
-
-		@Html.ActionLink("Edit", "Edit", new { id = item.Id })
-
-		//@Html.ActionLink("Details", "Details", new { id = item.Id })
-		@Html.ActionLink("Details", "Details", new { slug = item.Slug })
-
-		@Html.ActionLink("Delete", "Delete", new { id = item.Id })
-	}*@
 
 <html lang="en">
 <head>
@@ -91,63 +46,74 @@
 <body>
 
 	@*<header>
-		<div class="container-fluid position-relative no-side-padding">
+			<div class="container-fluid position-relative no-side-padding">
 
-			<a href="#" class="logo"><img src="~/Assets/blog bootstrap -bona/images/logo.png" alt="Logo Image"></a>
+				<a href="#" class="logo"><img src="~/Assets/blog bootstrap -bona/images/logo.png" alt="Logo Image"></a>
 
-			<div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
+				<div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
 
-			<ul class="main-menu visible-on-click" id="main-menu">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Categories</a></li>
-				<li><a href="#">Features</a></li>
-			</ul><!-- main-menu -->
+				<ul class="main-menu visible-on-click" id="main-menu">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">Features</a></li>
+				</ul><!-- main-menu -->
 
-			<div class="src-area">
-				<form>
-					<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
-					<input class="src-input" type="text" placeholder="Type of search">
-				</form>
-			</div>
+				<div class="src-area">
+					<form>
+						<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+						<input class="src-input" type="text" placeholder="Type of search">
+					</form>
+				</div>
 
-		</div><!-- conatiner -->
-	</header>*@
+			</div><!-- conatiner -->
+		</header>*@
 
 	<div class="slider"></div><!-- slider -->
-	@*//string BlogPostMaxLength(this string value, int maxLength)
-	//{
-	//	if (value == null)
-	//	{
-	//		return null;
-	//	}
-	//	if (maxLength < 0)
-	//	{
-	//		return "";
-	//	}
-	//	return value.Substring(0, Math.Min(value.Length, maxLength));
-	//}
+	@*string BlogPostMaxLength(this string value, int maxLength)
+		{
+		if (value == null)
+			{
+				return null;
+			}
+			if (maxLength < 0)
+		{
+				return "";
+			}
+			return value.Substring(0, Math.Min(value.Length, maxLength));
+		}
 
-	//BlogPostMaxLength(item.Body, 30);
+		BlogPostMaxLength(item.Body, 30);*@
 
 
-	//if (item.Body.Length > 30)
-	//{
-	//	item.Body = string.Concat(item.Body.Substring(0, 30), "...");
-	//}
-	//else
-	//{
-	//	item.Body = item.Body;
-	//}*@
+		@*if (item.Body.Length > 30)
+		{
+			item.Body = string.Concat(item.Body.Substring(0, 30), "...");
+		}
+		else
+		{
+			item.Body = item.Body;
+		}*@
 
 
 	<section class="blog-area section">
 		<div class="container">
 			<div class="row">
 				@foreach (var item in Model)
+
 				{
+					//if (item.Body.Length > 30)
+					//{
+					//	item.Body = string.Concat(item.Body.Substring(0, 30), "...");
+					//}
+					//else
+					//{
+					//	item.Body = item.Body;
+					//}
 					<div class="col-lg-4 col-md-6">
 						<div class="card h-100">
 							<div class="single-post post-style-1">
+
+
 
 								@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
 								{
@@ -156,6 +122,7 @@
 									@Html.ActionLink("Delete", "Delete", new { id = item.Id });
 									<b>------</b>
 									@Html.DisplayFor(modelItem => item.Slug);
+
 								}
 								@*<div class="blog-image"><img src="@Html.DisplayFor(modelItem => item.MediaURL)" alt="Blog Image"></div>*@
 								<div class="blog-image"><img src="@item.MediaURL" alt="Blog Image"></div>
@@ -164,16 +131,12 @@
 									<h4 class="title">
 										@Html.ActionLink(item.Title, "Details", new { slug = item.Slug })
 									</h4>
+									
 									@Html.Raw(item.Body)
-
-
-									<b>
-
-									</b>
 
 									<ul class="post-footer">
 										<li><a href="#"><i class="ion-heart"></i>57</a></li>
-										<li><a href="#"><i class="ion-chatbubble"></i>6</a></li>
+										<li><a href="#"><i class="ion-chatbubble"></i>6</a></li> @*can get Comment.Count*@
 										<li><a href="#"><i class="ion-eye"></i>138</a></li>
 									</ul>
 
@@ -186,8 +149,8 @@
 
 		</div><!-- row -->
 
-
 	</section><!-- section -->
+	Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
 
 
 	<div class="col-lg-4 col-md-6">
@@ -540,7 +503,6 @@
 	</div><!-- container -->
 	</section><!-- section -->
 
-
 	<footer>
 
 		<div class="container">
@@ -595,7 +557,9 @@
 
 			</div><!-- row -->
 		</div><!-- container -->
+
 	</footer>
+
 
 
 	@section Scripts {

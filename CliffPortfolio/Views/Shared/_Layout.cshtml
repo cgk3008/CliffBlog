@@ -37,15 +37,35 @@
 
 				<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
 			</ul>
-			
+
 			@Html.Partial("_LoginPartial")
 			<div class="src-area">
-				<form>
-					<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
-					<input class="src-input" type="text" placeholder="Type of search">
-				</form>
+				@using (Html.BeginForm("Index", "CliffBlogPosts", FormMethod.Post, htmlAttributes: new { @class = "form-inline topbar_search", role = "form" }))
+				{
+					//when typing a box appears outlined within search box.  How do I make it fit box style?
+			<form>
+				<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+				<input class="src-input" name="searchStr" type="text" placeholder="Search">
+			</form>
+				}
+				@*<form>
+			<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+			<input class="src-input" name="searchStr" type="text" placeholder="Type of search">
+		</form>*@
 
 			</div>
+
+
+			@*@using (Html.BeginForm("Index", "CliffBlogPosts", FormMethod.Post, htmlAttributes: new { @class = "form-inline topbar_search", role = "form" }))
+			{
+				<div class="src-area">
+					<form>
+						<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+						<input class="src-input" name="searchStr" type="text" placeholder="Type of search">
+					</form>
+				</div>
+			}*@
+
 			<!-- main-menu -->
 
 
@@ -55,24 +75,24 @@
 
 
 	@*<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+						<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
+					</ul>
+					@Html.Partial("_LoginPartial")
+				</div>
 			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-					<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
-				</ul>
-				@Html.Partial("_LoginPartial")
-			</div>
-		</div>
-	</div>*@
+		</div>*@
 	<div class="container body-content">
 		@RenderBody()
 		@RenderSection("SPAViews", required: false)

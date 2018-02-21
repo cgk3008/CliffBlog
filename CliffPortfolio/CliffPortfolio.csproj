@@ -108,6 +108,12 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -245,6 +251,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\MaxCommentLength.cs" />
     <Compile Include="Helpers\StringUtilities.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Content Include="Assets\blog bootstrap -bona\blank-static.html" />
@@ -313,6 +320,7 @@
     <Content Include="Assets\blog bootstrap -bona\single-post-3.html" />
     <Content Include="Assets\blog bootstrap -bona\single-post-3\css\responsive.css" />
     <Content Include="Assets\blog bootstrap -bona\single-post-3\css\styles.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Views\Account\ConfirmationSent.cshtml" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BlogComment.cs" />
