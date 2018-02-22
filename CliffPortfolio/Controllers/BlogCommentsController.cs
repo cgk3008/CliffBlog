@@ -60,7 +60,7 @@ namespace CliffPortfolio.Controllers
                 db.Comments.Add(blogComment);
                 db.SaveChanges();
                 var bp = db.Comments.Include("Post").FirstOrDefault(c => c.Id == blogComment.Id);
-                return RedirectToAction("Details");
+                return RedirectToAction("Index");
             }
 
             ViewBag.AuthorId = new SelectList(db.Users, "Id", "FirstName", blogComment.AuthorId);
