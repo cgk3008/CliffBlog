@@ -1,5 +1,5 @@
 ﻿@model CliffPortfolio.Models.CliffBlogPost
-@using CliffPortfolio.Models;
+@*@using CliffPortfolio.Models;*@
 @*@model CliffPortfolio.Models.BlogComment*@
 
 @{
@@ -82,8 +82,8 @@
 
 
 
-@*@using (Html.BeginForm("Create", "BlogComments"))*@
-
+@using (Html.BeginForm("Create", "BlogComments"))
+{
 @Html.AntiForgeryToken()
 
 <div class="form-horizontal">
@@ -93,13 +93,9 @@
 
 	@foreach (var comm in Model.Comments)
 
-		{
-			@Html.DisplayFor(model => comm.Body)
-
-
-
-
-		}
+	{
+		@Html.DisplayFor(model => comm.Body)
+	}
 
 
 	@*@Html.Partial("_CommentsPartial", new BlogComment() { PostId = Model.Id })*@
@@ -116,7 +112,7 @@
 		</div>
 	</div>
 </div>
-
+}
 
 
 <p>
