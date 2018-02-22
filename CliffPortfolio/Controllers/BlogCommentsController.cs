@@ -50,7 +50,7 @@ namespace CliffPortfolio.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,PostId,Comments")] BlogComment blogComment)  /*changed "Id,PostId,Body"*/
+        public ActionResult Create([Bind(Include = "Id,PostId,Body")] BlogComment blogComment)  /*changed "Id,PostId,Body"*/
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +60,7 @@ namespace CliffPortfolio.Controllers
                 db.Comments.Add(blogComment);
                 db.SaveChanges();
                 var bp = db.Comments.Include("Post").FirstOrDefault(c => c.Id == blogComment.Id);
-                return RedirectToAction("Index");
+                return RedirectToAction("Details");
             }
 
             ViewBag.AuthorId = new SelectList(db.Users, "Id", "FirstName", blogComment.AuthorId);
