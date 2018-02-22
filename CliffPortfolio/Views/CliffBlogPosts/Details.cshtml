@@ -81,7 +81,6 @@
 	use foreach like the Index page*@
 
 
-
 @using (Html.BeginForm("Create", "BlogComments"))
 {
 @Html.AntiForgeryToken()
@@ -94,9 +93,14 @@
 	@foreach (var comm in Model.Comments)
 
 	{
-		@Html.DisplayFor(model => comm.Body)
+	<div class="col-md-offset-2 col-md-10">
+		<ul class="post-footer">
+			<li>@Html.DisplayFor(model => comm.AuthorId)| @Html.DisplayFor(model => comm.Created)</li>
+			
+			<li>@Html.DisplayFor(model => comm.Body)</li>						
+		</ul>
+	</div>		
 	}
-
 
 	@*@Html.Partial("_CommentsPartial", new BlogComment() { PostId = Model.Id })*@
 
@@ -104,9 +108,19 @@
 	<div class="form-group">
 		<div class="col-md-offset-2 col-md-10">
 
-			<textarea name="Body" @*id="editor1"*@ rows="10" cols="80">
+			<textarea name="Body"  rows="10" cols="80">
                 ENTER TEXT
             </textarea>
+
+			[HttpGet]
+        public ActionResult Authorize()
+        {
+            var claims = new ClaimsPrincipal(User).Claims.ToArray();
+            var identity = new ClaimsIdentity(claims, "Bearer");
+            AuthenticationManager.SignIn(identity);
+            return new EmptyResult();
+        }
+
 
 			<input type="submit" value="Submit Comment" class="btn btn-default" />
 		</div>
@@ -116,7 +130,7 @@
 
 
 <p>
-	@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+	@if (User.IsInRole("Admin"))
 	{
 		@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) <t>|</t>
 

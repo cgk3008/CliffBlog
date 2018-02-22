@@ -85,7 +85,7 @@ namespace CliffPortfolio.Controllers
         }
 
         // GET: CliffBlogPosts/Create
-        [Authorize(Roles = "Admin, Moderator")]
+        [Authorize(Roles = "Admin")]
 
 
         public ActionResult Create()

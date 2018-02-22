@@ -13,9 +13,9 @@
 
 <h2>Blog Index</h2>
 
-@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+@if (User.IsInRole("Admin"))
 {
-	@*we will need to modify this and link it to my portfolio page*@
+	
 <p>
 	<br />
 	@Html.ActionLink("Create New", "Create")
@@ -115,7 +115,7 @@
 
 
 
-								@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+								@if (User.IsInRole("Admin"))
 								{
 									@Html.ActionLink("Edit", "Edit", new { id = item.Id });
 									<b>------</b>
