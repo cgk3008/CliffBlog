@@ -1,5 +1,5 @@
 ﻿@model CliffPortfolio.Models.CliffBlogPost
-
+@using CliffPortfolio.Models;
 @*@model CliffPortfolio.Models.BlogComment*@
 
 @{
@@ -80,34 +80,43 @@
 
 	use foreach like the Index page*@
 
-@*@foreach (var comm in Model)
 
-	{
-		@Html.DisplayFor(model => comm.Comments)
-	}*@
 
-@using (Html.BeginForm("Create", "BlogComments", FormMethod.Post))
-{
-	@Html.AntiForgeryToken()
+@*@using (Html.BeginForm("Create", "BlogComments"))*@
 
-	<div class="form-horizontal">
-		<h4>Comments</h4>
-		<hr />
-		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+@Html.AntiForgeryToken()
 
-		<input name="PostId" value="@Model.Id" hidden />
-		<div class="form-group">
-			<div class="col-md-offset-2 col-md-10">
+<div class="form-horizontal">
+	<h4>Comments</h4>
+	<hr />
+	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-				<textarea name="Body" @*id="editor1"*@ rows="10" cols="80">
+	@foreach (var comm in Model.Comments)
+
+		{
+			@Html.DisplayFor(model => comm.Body)
+
+
+
+
+		}
+
+
+	@*@Html.Partial("_CommentsPartial", new BlogComment() { PostId = Model.Id })*@
+
+	<input name="PostId" value="@Model.Id" hidden />
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+
+			<textarea name="Body" @*id="editor1"*@ rows="10" cols="80">
                 ENTER TEXT
             </textarea>
 
-				<input type="submit" value="Submit Comment" class="btn btn-default" />
-			</div>
+			<input type="submit" value="Submit Comment" class="btn btn-default" />
 		</div>
 	</div>
-}
+</div>
+
 
 
 <p>
