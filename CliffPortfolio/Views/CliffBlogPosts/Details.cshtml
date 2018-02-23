@@ -36,19 +36,23 @@
 			@Html.DisplayFor(model => model.Title)
 		</dd>
 
-		<dt>
-			@Html.DisplayNameFor(model => model.MediaURL)
+		@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+		{
+			<dt>
+				@Html.DisplayNameFor(model => model.MediaURL)
 
-		</dt>
-
+			</dt>
+		}
 		<dd>
 			@*@Html.DisplayFor(model => model.MediaURL)*@
 			<img class="img-responsive" src="@Model.MediaURL" alt="">
 		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.Body)
-		</dt>
+		@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+		{
+			<dt>
+				@Html.DisplayNameFor(model => model.Body)
+			</dt>
+		}
 		<dd>
 			@*@Html.DisplayFor(model => model.Body)  copied code from Index pasted below, had to change item to Model*@
 			@Html.Raw(Model.Body)
@@ -82,41 +86,50 @@
 
 
 @using (Html.BeginForm("Create", "BlogComments"))
-			{
-				@Html.AntiForgeryToken()
+{
+	@Html.AntiForgeryToken()
 	@*@Html.Hidden("PostId", Model.Id)  alternative method to utilize Id of post, likely need to modify or comment out <input name="Body"  ......*@
-				<div class="form-horizontal">
-					<h4>Comments</h4>
-					<hr />
-					@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+	<div class="form-horizontal">
+		<h4>Comments</h4>
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-					@foreach (var comm in Model.Comments)
+		@foreach (var comm in Model.Comments)
 
-	{
-						<div class="col-md-offset-2 col-md-10"> @*wrap this in a bootstrap "well"*@
-							<ul class="post-footer">
+		{
+			<div class="col-md-offset-2 col-md-10">
+				@*wrap this in a bootstrap "well"*@
+				<ul class="container-fluid position-relative no-side-padding">
 
-								@*I want to put DisplayName not AuthorId and then modify Created format for display*@
-								<li>@Html.DisplayFor(model => comm.AuthorId)| @Html.DisplayFor(model => comm.Created)</li>
+					@*I want to put DisplayName not AuthorId and then modify Created format for display*@
+					<li>@Html.DisplayFor(model => comm.Author.FirstName@*AuthorId*@)| @Html.DisplayFor(model => comm.Created)</li>
+					@*look for format addition to create date/time to code above!!!*@
+					<li>@Html.DisplayFor(model => comm.Body)</li>
+				</ul>
+			</div>
+		}
 
-								<li>@Html.DisplayFor(model => comm.Body)</li>
-							</ul>
-						</div>
-					}
+		@*@Html.Partial("_CommentsPartial", new BlogComment() { PostId = Model.Id }) this is showing comments from a partial view, alternative method, may be incomplete*@
 
-					@*@Html.Partial("_CommentsPartial", new BlogComment() { PostId = Model.Id }) this is showing comments from a partial view, alternative method, may be incomplete*@
+		<input name="PostId" value="@Model.Id" hidden />
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-12">
 
-					<input name="PostId" value="@Model.Id" hidden />
-					<div class="form-group">
-						<div class="col-md-offset-2 col-md-12">
+				@*<input name="Body" rows="10" cols="300" placeholder="Enter Comment" />*@
 
-							<input name="Body" @*rows="10" cols="300"*@ placeholder="Enter Comment" />
+				<textarea name="Body" id="editor1" rows="10" cols="80" placeholder="Enter Comment"></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-12">
 
-							<input type="submit" value="Submit Comment" class="btn btn-default" />
-						</div>
-					</div>
-				</div>
-			}
+				<input type="submit" value="Submit Comment" class="btn btn-default" />
+			</div>
+		</div>
+	</div>
+
+
+}
 
 
 <p>

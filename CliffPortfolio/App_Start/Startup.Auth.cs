@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using CliffPortfolio.Models;
 using CliffPortfolio.Providers;
+using Owin.Security.Providers.LinkedIn;
 
 namespace CliffPortfolio
 {
@@ -88,6 +89,10 @@ namespace CliffPortfolio
                 ClientId = "928256708182-ibq4c7oml9qg2n98q1pom41g5g8lj9ql.apps.googleusercontent.com",
                 ClientSecret = "nRyOU15C28ACLq7h3puYBtmg"
             });
+            //got google sign to work kind of.  for display name it shows email form and expects email label, then if enter email you signed in with it says already used!!!
+
+            app.UseLinkedInAuthentication("78swvnw58kow6y", "nshaa5dXFpMasTJV6");
+
         }
     }
 }

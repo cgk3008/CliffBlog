@@ -34,7 +34,7 @@ namespace CliffPortfolio.Migrations
             var userManager = new UserManager<ApplicationUser>(
      new UserStore<ApplicationUser>(context));
 
-            if (!context.Users.Any(u => u.Email == "cgk3008.ck@gmail.com, araynor@coderfoundry.com"))   // this line is saying if user does not exist with this email, then create that user????
+            if (!context.Users.Any(u => u.Email == "cgk3008.ck@gmail.com, moderator@coderfoundry.com"))   // this line is saying if user does not exist with this email, then create that user????
             {
                 userManager.Create(new ApplicationUser
                 {
@@ -58,7 +58,7 @@ namespace CliffPortfolio.Migrations
             var userId = userManager.FindByEmail("cgk3008.ck@gmail.com").Id;  //forgot to add my email on this line and "Object reference not set to an instance of an object." showed up in Package Manager Console
             userManager.AddToRole(userId, "Admin");
 
-            var userIdMod = userManager.FindByEmail("araynor@coderfoundry.com").Id;  
+            var userIdMod = userManager.FindByEmail("moderator@coderfoundry.com").Id;  
             userManager.AddToRole(userIdMod, "Moderator");
 
 
