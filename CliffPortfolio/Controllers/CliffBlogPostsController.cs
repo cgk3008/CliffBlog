@@ -14,59 +14,63 @@ using PagedList.Mvc;
 
 namespace CliffPortfolio.Controllers
 {
+    [RequireHttps]
     public class CliffBlogPostsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
 
-        // GET: CliffBlogPosts
-        public ActionResult Index(int? page)
+        // GET: CliffBlogPosts 
+        //[HttpPost] this was only used on the Post action which I have removed.
+        public ActionResult Index(int? page, string searchStr)
         {
-
-            int pageSize = 3;
-            int pageNumber = (page ?? 1);
-
-            //IQueryable<CliffBlogPost> listPosts = db.Posts.AsQueryable();
-
-            var listPosts = db.Posts.AsQueryable();
-            //OrderByDescending
-            return View(listPosts.OrderByDescending(i => i.Created).ToPagedList(pageNumber, pageSize));
-        }
-
-        [HttpPost]
-        public ActionResult Index(string searchStr, int? page)
-        {
-            var result = db.Posts.Where(p => p.Body.Contains(searchStr))
-                .Union(db.Posts.Where(p => p.Title.Contains(searchStr)))
-                .Union(db.Posts.Where(p => p.Comments.Any(c => c.Body.Contains(searchStr))))
-                .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.DisplayName.Contains(searchStr))))
-                .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.FirstName.Contains(searchStr))))
-                .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.LastName.Contains(searchStr))))
-                //.Union(db.Posts.Where(p => p.Comments.Any(c => c.Email.Contains(searchStr))))
-                 .Union(db.Posts.Where(p => p.Comments.Any(c => c.UpdateReason.Contains(searchStr))));
-
-            //var listPosts = db.Posts.AsQueryable(); //thought i needed db.CliffBlogPosts not db.Posts...see IdentityModels...set database value of a blog post to Posts  ---  public DbSet<CliffBlogPost> Posts { get; set; }
-            //listPosts = listPosts.Where(p => p.Title.Contains(searchStr)) ||
-            //    p.Body.Contains(searchStr) ||
-            //    p.Comments.Any(c => c.Body.Contains(searchStr) ||
-            //                           c.Author.FirstName.Contains(searchStr) ||
-            //                           c.Author.DisplayName.Contains(searchStr) ||
-            //                           c.Author.LastName.Contains(searchStr) ||
-            //                           c.Email.Contains(searchStr) ||
-            //                           c.UpdateReason.Contains(searchStr));
-            
-            //OK so when I hit next page after search for "t" or just one letter that should return almost every post, it resets to Index view with just 3 blog posts with all blogs posts listed.
-
-            //Also, when search then click on blog post from search, go to details, should I put a back to search button/text link? same as back to list/index
-
+            ViewBag.Search = searchStr;
+            var blogList = IndexSearch(searchStr);
             int pageSize = 6;
             int pageNumber = (page ?? 1);
 
-            return View(result.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
+            //IQueryable<CliffBlogPost> listPosts = db.Posts.AsQueryable();
+            //var listPosts = db.Posts.AsQueryable();
+            //OrderByDescending
+            return View(blogList./*OrderByDescending(p => p.Created).*/ToPagedList(pageNumber, pageSize));
 
-            //return View(listPosts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
         }
 
+        public IQueryable<CliffBlogPost> IndexSearch(string searchStr)
+        {
+            IQueryable<CliffBlogPost> result = null;
+            if (searchStr != null)
+            {
+                result = db.Posts.AsQueryable();
+
+                result = result.Where(p => p.Body.Contains(searchStr))
+                                .Union(db.Posts.Where(p => p.Title.Contains(searchStr)))
+                                .Union(db.Posts.Where(p => p.Comments.Any(c => c.Body.Contains(searchStr))))
+                                .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.DisplayName.Contains(searchStr))))
+                                .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.FirstName.Contains(searchStr))))
+                                .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.LastName.Contains(searchStr))))
+                                 //.Union(db.Posts.Where(p => p.Comments.Any(c => c.Email.Contains(searchStr))))
+                                 .Union(db.Posts.Where(p => p.Comments.Any(c => c.UpdateReason.Contains(searchStr))));
+            }
+            else
+            {
+                result = db.Posts.AsQueryable();
+            }
+            return /*View(*/result.OrderByDescending(p => p.Created)/*.ToPagedList(pageNumber, pageSize))*/;
+        }
+        //var listPosts = db.Posts.AsQueryable(); 
+        //thought i needed db.CliffBlogPosts not db.Posts...see IdentityModels...set database value of a blog post to Posts  ---  public DbSet<CliffBlogPost> Posts { get; set; }
+
+        //listPosts = listPosts.Where(p => p.Title.Contains(searchStr)) ||
+        //    p.Body.Contains(searchStr) ||
+        //    p.Comments.Any(c => c.Body.Contains(searchStr) ||
+        //                           c.Author.FirstName.Contains(searchStr) ||
+        //                           c.Author.DisplayName.Contains(searchStr) ||
+        //                           c.Author.LastName.Contains(searchStr) ||
+        //                           c.Email.Contains(searchStr) ||
+        //                           c.UpdateReason.Contains(searchStr));
+
+        //Also, when search then click on blog post from search, go to details, should I put a back to search button/text link? same as back to list/index
 
         // GET: CliffBlogPosts/Details/5
 

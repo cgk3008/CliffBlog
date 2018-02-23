@@ -47,12 +47,12 @@ namespace CliffPortfolio.Migrations
 
                 userManager.Create(new ApplicationUser
                 {
-                    UserName = "araynor@coderfoundry.com",
-                    Email = "araynor@coderfoundry.com",
+                    UserName = "CoderFoundry",
+                    Email = "moderator@coderfoundry.com",
                     FirstName = "Antonio",
                     LastName = "Raynor",
                     DisplayName = "Antonio"
-                }, "OurTeacher12!");
+                }, "Password-1");
             }
             
             var userId = userManager.FindByEmail("cgk3008.ck@gmail.com").Id;  //forgot to add my email on this line and "Object reference not set to an instance of an object." showed up in Package Manager Console

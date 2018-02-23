@@ -8,9 +8,6 @@
 	ViewBag.Title = "Index";
 }
 
-
-
-
 <h2>Blog Index</h2>
 
 @if (User.IsInRole("Admin"))
@@ -69,23 +66,8 @@
 		</header>*@
 
 	<div class="slider"></div><!-- slider -->
-	@*string BlogPostMaxLength(this string value, int maxLength)
-		{
-		if (value == null)
-			{
-				return null;
-			}
-			if (maxLength < 0)
-		{
-				return "";
-			}
-			return value.Substring(0, Math.Min(value.Length, maxLength));
-		}
-
-		BlogPostMaxLength(item.Body, 30);*@
-
-
-		@*if (item.Body.Length > 30)
+	
+	@*if (item.Body.Length > 30)
 		{
 			item.Body = string.Concat(item.Body.Substring(0, 30), "...");
 		}
@@ -131,7 +113,7 @@
 									<h4 class="title">
 										@Html.ActionLink(item.Title, "Details", new { slug = item.Slug })
 									</h4>
-									
+
 									@Html.Raw(item.Body)
 
 									<ul class="post-footer">
@@ -150,8 +132,9 @@
 		</div><!-- row -->
 
 	</section><!-- section -->
-	Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+	@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, searchStr=ViewBag.Search}));
 
+	@*PagedListRenderOptions.ClassicPlusFirstAndLast)*@
 
 	<div class="col-lg-4 col-md-6">
 		<div class="card h-100">
@@ -581,16 +564,4 @@
 
 </html>
 	}
-	public static string WithMaxLength(this string value, int maxLength)
-	{
-	if (value == null)
-	{
-	return null;
-	}
-	if (maxLength < 0)
-	{
-	return "";
-	}
-	return value.Substring(0, Math.Min(value.Length, maxLength));
-	}
-
+	

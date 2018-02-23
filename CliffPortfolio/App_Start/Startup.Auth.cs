@@ -79,15 +79,18 @@ namespace CliffPortfolio
             //    consumerKey: "",
             //    consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //    appId: "",
-            //    appSecret: "");
+            app.UseFacebookAuthentication(
+                appId: "374809709667414",
+                appSecret: "abbf47506f87604218fe8074eed37c7");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "928256708182-ibq4c7oml9qg2n98q1pom41g5g8lj9ql.apps.googleusercontent.com",
+                ClientSecret = "nRyOU15C28ACLq7h3puYBtmg"
+            });
         }
     }
 }
+
+
+

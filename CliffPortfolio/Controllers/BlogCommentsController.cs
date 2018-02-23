@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity;
 
 namespace CliffPortfolio.Controllers
 {
+    [RequireHttps]
     public class BlogCommentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -53,6 +54,8 @@ namespace CliffPortfolio.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,PostId,Body")] BlogComment blogComment)  
         {
+
+            //return to details page!!!!! once logged in, set a return URL?  or use HTTP requester to go back to previous page (in this case details page)  , new { ReturnUrl = ViewBag.ReturnUrl }
             if (ModelState.IsValid)
             {
                 blogComment.AuthorId = User.Identity.GetUserId();
@@ -62,7 +65,7 @@ namespace CliffPortfolio.Controllers
                 db.SaveChanges();
                 var bp = db.Comments.Include("Post").FirstOrDefault(c => c.Id == blogComment.Id);
                 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index" /*"Details", "CliffBlogPosts"*//*, new { id = Comments.PostId }*/);
             }
 
             ViewBag.AuthorId = new SelectList(db.Users, "Id", "FirstName", blogComment.AuthorId);
