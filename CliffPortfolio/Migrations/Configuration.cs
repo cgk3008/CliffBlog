@@ -54,11 +54,11 @@ namespace CliffPortfolio.Migrations
                     DisplayName = "Antonio"
                 }, "Password-1");
             }
-            
+
             var userId = userManager.FindByEmail("cgk3008.ck@gmail.com").Id;  //forgot to add my email on this line and "Object reference not set to an instance of an object." showed up in Package Manager Console
             userManager.AddToRole(userId, "Admin");
 
-            var userIdMod = userManager.FindByEmail("moderator@coderfoundry.com").Id;  
+            var userIdMod = userManager.FindByEmail("moderator@coderfoundry.com").Id;
             userManager.AddToRole(userIdMod, "Moderator");
 
 

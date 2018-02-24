@@ -40,35 +40,36 @@
 				<li><a href="#">Features</a></li>
 
 				<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
+				<li>@Html.Partial("_LoginPartial")</li>
 			</ul>
 
-			@Html.Partial("_LoginPartial")
+
 			<div class="src-area">
 				@using (Html.BeginForm("Index", "CliffBlogPosts", FormMethod.Post, htmlAttributes: new { @class = "form-inline topbar_search", role = "form" }))
-				{
-					//when typing a box appears outlined within search box.  How do I make it fit box style?
-					<form>
-						<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
-						<input class="src-input" name="searchStr" type="text" placeholder="Search">
-					</form>
-				}
+		{
+			//when typing a box appears outlined within search box.  How do I make it fit box style?
+			<form>
+				<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+				<input class="src-input" name="searchStr" type="text" placeholder="Search">
+			</form>
+}
 				@*<form>
-						<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
-						<input class="src-input" name="searchStr" type="text" placeholder="Type of search">
-					</form>*@
+				<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+				<input class="src-input" name="searchStr" type="text" placeholder="Type of search">
+			</form>*@
 
 			</div>
-
+			
 
 			@*@using (Html.BeginForm("Index", "CliffBlogPosts", FormMethod.Post, htmlAttributes: new { @class = "form-inline topbar_search", role = "form" }))
-				{
-					<div class="src-area">
-						<form>
-							<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
-							<input class="src-input" name="searchStr" type="text" placeholder="Type of search">
-						</form>
-					</div>
-				}*@
+		{
+			<div class="src-area">
+				<form>
+					<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+					<input class="src-input" name="searchStr" type="text" placeholder="Type of search">
+				</form>
+			</div>
+		}*@
 
 			<!-- main-menu -->
 
