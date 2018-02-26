@@ -8,7 +8,8 @@
 	ViewBag.Title = "Index";
 }
 
-<h2>Blog Index</h2>
+<h2>Cliff's Blog</h2>
+<h3>Index</h3>
 
 @if (User.IsInRole("Admin"))
 {
@@ -103,14 +104,14 @@
 				@foreach (var item in Model)
 
 				{
-					//if (item.Body.Length > 30)
-					//{
-					//	item.Body = string.Concat(item.Body.Substring(0, 30), "...");
-					//}
-					//else
-					//{
-					//	item.Body = item.Body;
-					//}
+					if (item.Body.Length > 60)
+					{
+						item.Body = string.Concat(item.Body.Substring(0, 60), "...");
+					}
+					else
+					{
+						item.Body = item.Body;
+					}
 					<div class="col-lg-4 col-md-6">
 						<div class="card h-100">
 							<div class="single-post post-style-1">
@@ -130,9 +131,9 @@
 								<div class="blog-image"><img src="@item.MediaURL" alt="Blog Image"></div>
 								<div class="blog-info">
 
-									<h4 class="title">
+									<h3 class="title">
 										@Html.ActionLink(item.Title, "Details", new { slug = item.Slug })
-									</h4>
+									</h3>
 
 									@*jQuery(document).ready(function( $ ) {
 

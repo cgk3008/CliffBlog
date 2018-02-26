@@ -64,8 +64,15 @@ namespace CliffPortfolio.Controllers
                 db.Comments.Add(blogComment);
                 db.SaveChanges();
                 var bp = db.Comments.Include("Post").FirstOrDefault(c => c.Id == blogComment.Id);
-                
-                return RedirectToAction("Index" /*"Details", "CliffBlogPosts"*//*, new { id = Comments.PostId }*/);
+
+
+                //if (User.IsInRole("Admin, Moderator"))
+                //{
+                    return RedirectToAction("Index" /*"Details", "CliffBlogPosts"*//*, new { id = Comments.PostId }*/);
+                //}
+                //else return RedirectToAction("Details", "CliffBlogPosts", new { id = db.Posts, blogComment
+                //.PostId});
+
             }
 
             ViewBag.AuthorId = new SelectList(db.Users, "Id", "FirstName", blogComment.AuthorId);
