@@ -279,3 +279,6 @@ C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\Cli
 C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\CsQuery.xml
 C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\SendGrid.dll
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\SendGrid.pdb
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\bin\SendGrid.xml

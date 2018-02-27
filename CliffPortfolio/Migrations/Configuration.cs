@@ -45,23 +45,30 @@ namespace CliffPortfolio.Migrations
                     DisplayName = "CK"
                 }, "Redd12!");
 
+                //userManager.Create(new ApplicationUser
+                //{
+                //    UserName = "CoderFoundry",
+                //    Email = "moderator@coderfoundry.com",
+                //    FirstName = "Antonio",
+                //    LastName = "Raynor",
+                //    DisplayName = "Antonio"
+                //}, "Password-1");
+
                 userManager.Create(new ApplicationUser
                 {
-                    UserName = "CoderFoundry",
-                    Email = "moderator@coderfoundry.com",
+                    UserName = "araynor@coderfoundry.com",
+                    Email = "araynor@coderfoundry.com",
                     FirstName = "Antonio",
                     LastName = "Raynor",
                     DisplayName = "Antonio"
-                }, "Password-1");
+                }, "OurTeacher12!");
             }
 
             var userId = userManager.FindByEmail("cgk3008.ck@gmail.com").Id;  //forgot to add my email on this line and "Object reference not set to an instance of an object." showed up in Package Manager Console
             userManager.AddToRole(userId, "Admin");
 
-            var userIdMod = userManager.FindByEmail("moderator@coderfoundry.com").Id;
+            var userIdMod = userManager.FindByEmail("araynor@coderfoundry.com").Id;
             userManager.AddToRole(userIdMod, "Moderator");
-
-
         }
     }
 }

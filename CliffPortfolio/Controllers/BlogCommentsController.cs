@@ -52,7 +52,7 @@ namespace CliffPortfolio.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,PostId,Body")] BlogComment blogComment)  
+        public ActionResult Create([Bind(Include = "Id,PostId,Body")] BlogComment blogComment)
         {
 
             //return to details page!!!!! once logged in, set a return URL?  or use HTTP requester to go back to previous page (in this case details page)  , new { ReturnUrl = ViewBag.ReturnUrl }
@@ -66,12 +66,24 @@ namespace CliffPortfolio.Controllers
                 var bp = db.Comments.Include("Post").FirstOrDefault(c => c.Id == blogComment.Id);
 
 
-                //if (User.IsInRole("Admin, Moderator"))
-                //{
-                    return RedirectToAction("Index" /*"Details", "CliffBlogPosts"*//*, new { id = Comments.PostId }*/);
-                //}
-                //else return RedirectToAction("Details", "CliffBlogPosts", new { id = db.Posts, blogComment
-                //.PostId});
+                if (User.IsInRole("Admin, Moderator"))
+                {
+                    return RedirectToAction("Index");
+
+                }
+                else
+                {
+                    return RedirectToAction("Details", "CliffBlogPosts", new { slug = bp.Post.Slug });
+                }
+
+                /*"Details", "CliffBlogPosts"*//*, new { id = Comments.PostId }*/
+                                               //}
+                                               //else return RedirectToAction("Details", "CliffBlogPosts", new { id = db.Posts, blogComment
+                                               //.PostId});
+
+                //return Url.Action("Details", "CliffBlogPosts", new { id = "PostId" })
+
+
 
             }
 

@@ -13,10 +13,12 @@ namespace CliffPortfolio
         {
 
  //           routes.MapRoute(
- //name: "NewSlug",
- //url: "Blog/{slug}",
- //defaults: new
- //{
+ //name: "NewPostId",
+ //url: "CliffBlogPosts/Details/{slug}",
+ //defaults: new { controller = "CliffBlogPosts", action = "Details", slug = UrlParameter.Optional });
+
+
+ //           {
  //    controller = "BlogPosts",
  //    action = "Details",
  //    slug = UrlParameter.Optional
