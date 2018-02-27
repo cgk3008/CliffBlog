@@ -1,8 +1,8 @@
 ﻿@using PagedList;
 @using PagedList.Mvc;
 
-@model IPagedList<CliffPortfolio.Models.CliffBlogPost> 
-	
+@model IPagedList<CliffPortfolio.Models.CliffBlogPost>
+
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
 	ViewBag.Title = "Index";
@@ -13,13 +13,13 @@
 
 @if (User.IsInRole("Admin"))
 {
-	
-<p>
-	<br />
-	@Html.ActionLink("Create New", "Create")
-	<br />
-	<br />
-</p>
+
+	<p>
+		<br />
+		@Html.ActionLink("Create New", "Create")
+		<br />
+		<br />
+	</p>
 
 }
 
@@ -43,26 +43,7 @@
 </head>
 <body>
 
-	<script>
-		window.fbAsyncInit = function () {
-			FB.init({
-				appId: '374809709667414',
-				cookie: true,
-				xfbml: true,
-				version: 'v2.12'
-			});
 
-			FB.AppEvents.logPageView();
-
-		};
-		(function (d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) { return; }
-			js = d.createElement(s); js.id = id;
-			js.src = "https://connect.facebook.net/en_US/sdk.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
 
 	@*<header>
 			<div class="container-fluid position-relative no-side-padding">
@@ -104,13 +85,15 @@
 				@foreach (var item in Model)
 
 				{
+
+					string strBody;
 					if (item.Body.Length > 60)
 					{
-						item.Body = string.Concat(item.Body.Substring(0, 60), "...");
+						strBody = string.Concat(item.Body.Substring(0, 60), "...");
 					}
 					else
 					{
-						item.Body = item.Body;
+						strBody = item.Body;
 					}
 					<div class="col-lg-4 col-md-6">
 						<div class="card h-100">
@@ -137,19 +120,23 @@
 
 									@*jQuery(document).ready(function( $ ) {
 
-									$("#element-to-truncate").dotdotdot({
-									// Options go here
-									});
+										$("#element-to-truncate").dotdotdot({
+										// Options go here
+										});
 
-									});
-										
-										How do i use this Jquery script?*@
+										});
 
-									@Html.Raw(item.Body)
+											How do i use this Jquery script?*@
+									<div class="row">
+										<div class="col-md-12">
+											@Html.Raw(strBody)
+										</div>
+									</div>
+
 
 									<ul class="post-footer">
 										<li><a href="#"><i class="ion-heart"></i>57</a></li>
-										<li><a href="#"><i class="ion-chatbubble"></i>6</a></li> @* get Comment.Count?*@
+										<li><a href="#"><i class="ion-chatbubble"></i>@item.Comments.Count()</a></li> @* get Comment.Count?*@
 										<li><a href="#"><i class="ion-eye"></i>138</a></li>
 									</ul>
 
@@ -244,29 +231,10 @@
 
 		<script src="~/Assets/blog bootstrap -bona/common-js/scripts.js"></script>
 
-		<script>
-			window.fbAsyncInit = function () {
-				FB.init({
-					appId: '374809709667414',
-					cookie: true,
-					xfbml: true,
-					version: 'v2.12'
-				});
 
-				FB.AppEvents.logPageView();
-
-			};
-			(function (d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) { return; }
-				js = d.createElement(s); js.id = id;
-				js.src = "https://connect.facebook.net/en_US/sdk.js";
-				fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-		</script>
 
 	</body>
 
 </html>
 	}
-	
+

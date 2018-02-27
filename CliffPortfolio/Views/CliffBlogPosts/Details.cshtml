@@ -107,11 +107,6 @@
 
 				<h4>@Html.DisplayFor(model => comm.Body)</h4>
 
-
-
-
-
-
 			</div>
 
 			if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
@@ -140,10 +135,16 @@
 		</div>
 		<div class="form-group">
 			<div class="col-md-offset-2 col-md-12">
+				@if (Request.IsAuthenticated)
+				{
+					<input type="submit" value="Submit Comment" class="btn btn-default" />
 
-				<input type="submit" value="Submit Comment" class="btn btn-default" />
-
-				@*(Model, Page => Url.Action("Details")*@
+					@*(Model, Page => Url.Action("Details")*@
+				}
+				else
+				{
+					<input disabled type="submit" value="Submit Comment" class="btn btn-default" />
+				}
 
 			</div>
 		</div>
