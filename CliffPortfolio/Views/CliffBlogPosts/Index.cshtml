@@ -1,28 +1,12 @@
 ﻿@using PagedList;
 @using PagedList.Mvc;
 
-<<<<<<< HEAD
+
 @model IPagedList<CliffPortfolio.Models.CliffBlogPost>
 
-@*<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />*@
-
-@*<link href="favicon.ico" rel="icon" type="image/x-icon" />*@
-<link rel="stylesheet" href="~/Assets/HTML/css/bootstrap.css" />
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="~/Assets/HTML/css/style.css" />
-
-
-
-=======
-@model IPagedList<CliffPortfolio.Models.CliffBlogPost> 
-	
-<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
->>>>>>> parent of 7146ad2... added disable feature to comment post button if user not logged in.  Need to add instruction to register/login if want to comment. Then add code to remove that instruction if logged in/authenticated.
 @{
 	ViewBag.Title = "Index";
 }
-
-
 
 @if (User.IsInRole("Admin"))
 {
@@ -44,71 +28,17 @@
 	<meta charset="UTF-8">
 
 
-	@*<!-- Font -->
+	<!-- Font -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
 		<!-- Stylesheets -->
 		<link href="~//Assets/blog bootstrap -bona/common-css/bootstrap.css" rel="stylesheet">
 		<link href="~//Assets/blog bootstrap -bona/common-css/ionicons.css" rel="stylesheet">
 		<link href="~//Assets/blog bootstrap -bona/layout-1/css/styles.css" rel="stylesheet">
-		<link href="~/Assets/blog bootstrap -bona/layout-1/css/responsive.css" rel="stylesheet">*@
+		<link href="~/Assets/blog bootstrap -bona/layout-1/css/responsive.css" rel="stylesheet">
 
 </head>
 <body>
-
-	<script>
-		window.fbAsyncInit = function () {
-			FB.init({
-				appId: '374809709667414',
-				cookie: true,
-				xfbml: true,
-				version: 'v2.12'
-			});
-
-			FB.AppEvents.logPageView();
-
-		};
-		(function (d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) { return; }
-			js = d.createElement(s); js.id = id;
-			js.src = "https://connect.facebook.net/en_US/sdk.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
-
-	@*<header>
-			<div class="container-fluid position-relative no-side-padding">
-
-				<a href="#" class="logo"><img src="~/Assets/blog bootstrap -bona/images/logo.png" alt="Logo Image"></a>
-
-				<div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
-
-				<ul class="main-menu visible-on-click" id="main-menu">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Categories</a></li>
-					<li><a href="#">Features</a></li>
-				</ul><!-- main-menu -->
-
-				<div class="src-area">
-					<form>
-						<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
-						<input class="src-input" type="text" placeholder="Type of search">
-					</form>
-				</div>
-
-			</div><!-- conatiner -->
-		</header>*@
-
-	@*<div class="slider"></div>*@<!-- slider -->
-	@*if (item.Body.Length > 30)
-		{
-			item.Body = string.Concat(item.Body.Substring(0, 30), "...");
-		}
-		else
-		{
-			item.Body = item.Body;
-		}*@
 
 
 	<!-- Blog Section -->
@@ -175,84 +105,6 @@
 	<!-- End of Blog Section -->
 
 
-	@*<section class="blog-area section">
-		<div class="container">
-			<div class="row">
-				@foreach (var item in Model)
-
-				{
-					if (item.Body.Length > 60)
-					{
-						item.Body = string.Concat(item.Body.Substring(0, 60), "...");
-					}
-					else
-					{
-						item.Body = item.Body;
-					}
-					<div class="col-lg-4 col-md-6">
-						<div class="card h-100">
-							<div class="single-post post-style-1">
-
-
-
-								@if (User.IsInRole("Admin"))
-								{
-									@Html.ActionLink("Edit", "Edit", new { id = item.Id });
-									<b>------</b>
-									@Html.ActionLink("Delete", "Delete", new { id = item.Id });
-									<b>------</b>
-									@Html.DisplayFor(modelItem => item.Slug);
-
-								}
-								
-								<div class="blog-image"><img src="@item.MediaURL" alt="Blog Image"></div>
-								<div class="blog-info">
-
-									<h3 class="title">
-										@Html.ActionLink(item.Title, "Details", new { slug = item.Slug })
-									</h3>
-<<<<<<< HEAD
-									
-									<div class="row">
-										<div class="col-md-12">
-											@Html.Raw(strBody)
-										</div>
-									</div>
-=======
-
-									@*jQuery(document).ready(function( $ ) {
-
-									$("#element-to-truncate").dotdotdot({
-									// Options go here
-									});
-
-									});
-										
-										How do i use this Jquery script?*@
->>>>>>> parent of 7146ad2... added disable feature to comment post button if user not logged in.  Need to add instruction to register/login if want to comment. Then add code to remove that instruction if logged in/authenticated.
-
-									@Html.Raw(item.Body)
-
-									<ul class="post-footer">
-										<li><a href="#"><i class="ion-heart"></i>57</a></li>
-<<<<<<< HEAD
-										<li><a href="#"><i class="ion-chatbubble"></i>@item.Comments.Count()</a></li> 
-=======
-										<li><a href="#"><i class="ion-chatbubble"></i>6</a></li> @* get Comment.Count?*@
->>>>>>> parent of 7146ad2... added disable feature to comment post button if user not logged in.  Need to add instruction to register/login if want to comment. Then add code to remove that instruction if logged in/authenticated.
-										<li><a href="#"><i class="ion-eye"></i>138</a></li>
-									</ul>
-
-								</div><!-- blog-info -->
-							</div><!-- single-post -->
-						</div><!-- card -->
-					</div><!-- col-lg-4 col-md-6 -->
-				}
-			</div><!-- col-lg-8 col-md-12 -->
-
-		</div><!-- row -->
-
-	</section><!-- section -->*@
 
 	@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)of @Model.PageCount @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, searchStr = ViewBag.Search }))
 
@@ -325,15 +177,7 @@
 			// Replace the <textarea id="editor1"> with a CKEditor
 			// instance, using default configuration.
 			CKEDITOR.replace('editor1');
-		</script>
-		@*<script src="~/Assets/blog bootstrap -bona/common-js/jquery-3.1.1.min.js"></script>
-
-			<script src="~/Assets/blog bootstrap -bona/common-js/tether.min.js"></script>
-
-			<script src="~/Assets/blog bootstrap -bona/common-js/bootstrap.js"></script>
-			<script src="jquery.dotdotdot.js"></script>
-
-			<script src="~/Assets/blog bootstrap -bona/common-js/scripts.js"></script>*@
+		</script>	
 
 		<script src="~/Assets/blog bootstrap -bona/common-js/jquery-3.1.1.min.js"></script>
 
@@ -343,30 +187,7 @@
 
 		<script src="~/Assets/blog bootstrap -bona/common-js/scripts.js"></script>
 
-<<<<<<< HEAD
-=======
-		<script>
-			window.fbAsyncInit = function () {
-				FB.init({
-					appId: '374809709667414',
-					cookie: true,
-					xfbml: true,
-					version: 'v2.12'
-				});
 
-				FB.AppEvents.logPageView();
-
-			};
-			(function (d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) { return; }
-				js = d.createElement(s); js.id = id;
-				js.src = "https://connect.facebook.net/en_US/sdk.js";
-				fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-		</script>
-
->>>>>>> parent of 7146ad2... added disable feature to comment post button if user not logged in.  Need to add instruction to register/login if want to comment. Then add code to remove that instruction if logged in/authenticated.
 	</body>
 
 </html>
