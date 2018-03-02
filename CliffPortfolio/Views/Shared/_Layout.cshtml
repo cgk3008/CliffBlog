@@ -1,16 +1,11 @@
 ﻿<!DOCTYPE html>
-@*<html lang="en">
+<html lang="en">
 <head>
 	<meta charset="utf-8" />
 	<title>@ViewBag.Title - My ASP.NET Application</title>
 	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">*@
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<html class="no-js">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
 
@@ -38,41 +33,20 @@
 		<div class="navbar navbar-fixed-top">
 			<div class="container">
 
-				@*<div class="navbar-header">
+				<div class="navbar-header">
 					<a class="navbar-brand" href="#"><img class="logo" src="~/Assets/HTML/assets/logo.png" alt=""></a>
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-				</div>*@
+				</div>
 
-				<nav id="my-nav" class="navbar-collapse collapse" role="navigation">
-					<ul class="nav navbar-nav">
-						<li> @Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-						<li><a href="#portfolio">Portfolio</a></li>
-						<li><a href="#testimonials">Philosophy</a></li>
-						<li><a href="#team">About</a></li>
-						@*<li><a href="#services">Services</a></li>*@
-						<li><a href="#blog">Blog</a></li>
-						<li><a href="#contact">Contact</a></li>
-						<li>@Html.Partial("_LoginPartial")</li>
-					</ul>
-					<div class="src-area">
-						@using (Html.BeginForm("Index", "CliffBlogPosts", FormMethod.Post, htmlAttributes: new { @class = "form-inline topbar_search", role = "form" }))
-					{
-						//when typing a box appears outlined within search box.  How do I make it fit box style?
-						<form>
-							<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
-							<input class="src-input" name="searchStr" type="text" placeholder="Search">
-						</form>
-				}
-					</div>
-				</nav><!--/.navbar-collapse -->
+				<!--/.navbar-collapse -->
 			</div>
 		</div>
 		<!-- End of Navigation Bar -->
-		@*<header>
+		<header>
 			<div class="container-fluid position-relative no-side-padding">
 
 				<a href="#" class="logo"><img src="~/Assets/blog bootstrap -bona/images/logo.png" alt="Logo Image"></a>
@@ -102,7 +76,7 @@
 
 
 			</div><!-- conatiner -->
-		</header>*@
+		</header>
 
 
 		@*<div class="navbar navbar-inverse navbar-fixed-top">
@@ -145,26 +119,6 @@
 	<script src="~/Scripts/ckeditor/ckeditor.js"></script>
 	@RenderSection("Scripts", required: false)
 
-	<script>
-		window.fbAsyncInit = function () {
-			FB.init({
-				appId: '374809709667414',
-				cookie: true,
-				xfbml: true,
-				version: 'v2.12'
-			});
-
-			FB.AppEvents.logPageView();
-
-		};
-		(function (d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) { return; }
-			js = d.createElement(s); js.id = id;
-			js.src = "https://connect.facebook.net/en_US/sdk.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
 
 </body>
 
