@@ -81,8 +81,8 @@ namespace CliffPortfolio
             //    consumerSecret: "");
 
             app.UseFacebookAuthentication(
-                appId: "219869168575609",
-                appSecret: "847aff303f3dbd96051d8c2f38d69e88");
+                appId: "374809709667414",
+                appSecret: "abbf47506f87604218fe8074eed37c7");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {

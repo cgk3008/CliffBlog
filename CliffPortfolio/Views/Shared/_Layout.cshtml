@@ -129,6 +129,7 @@
 				</div>
 			</div>
 		</div>*@
+<<<<<<< HEAD
 		<div class="container body-content">
 			@RenderBody()
 			@RenderSection("SPAViews", required: false)
@@ -169,6 +170,50 @@
 
 
 	</body>
+=======
+	<div class="container body-content">
+		@RenderBody()
+		@RenderSection("SPAViews", required: false)
+		<hr />
+		<footer>
+			<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+		</footer>
+	</div>
+
+	<!-- SCIPTS -->
+	<script src="~/Assets/blog bootstrap -bona/common-js/jquery-3.1.1.min.js"></script>
+	<script src="~/Assets/blog bootstrap -bona/common-js/tether.min.js"></script>
+	<script src="~/Assets/blog bootstrap -bona/common-js/bootstrap.js"></script>
+	<script src="~/Assets/blog bootstrap -bona/common-js/scripts.js"></script>
+
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+	<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+	@RenderSection("Scripts", required: false)
+
+	<script>
+		window.fbAsyncInit = function () {
+			FB.init({
+				appId: '374809709667414',
+				cookie: true,
+				xfbml: true,
+				version: 'v2.12'
+			});
+
+			FB.AppEvents.logPageView();
+
+		};
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) { return; }
+			js = d.createElement(s); js.id = id;
+			js.src = "https://connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+</body>
+>>>>>>> parent of 7146ad2... added disable feature to comment post button if user not logged in.  Need to add instruction to register/login if want to comment. Then add code to remove that instruction if logged in/authenticated.
 </html>
 
 
