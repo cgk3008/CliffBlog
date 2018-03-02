@@ -3,13 +3,20 @@
 
 @model IPagedList<CliffPortfolio.Models.CliffBlogPost>
 
-<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@*<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />*@
+
+@*<link href="favicon.ico" rel="icon" type="image/x-icon" />*@
+<link rel="stylesheet" href="~/Assets/HTML/css/bootstrap.css" />
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="~/Assets/HTML/css/style.css" />
+
+
+
 @{
 	ViewBag.Title = "Index";
 }
 
-<h2>Cliff's Blog</h2>
-<h3>Index</h3>
+
 
 @if (User.IsInRole("Admin"))
 {
@@ -25,20 +32,20 @@
 
 <html lang="en">
 <head>
-	<title>TITLE</title>
+	<title>Cliff's Blog Index</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 
 
-	<!-- Font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+	@*<!-- Font -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
-	<!-- Stylesheets -->
-	<link href="~//Assets/blog bootstrap -bona/common-css/bootstrap.css" rel="stylesheet">
-	<link href="~//Assets/blog bootstrap -bona/common-css/ionicons.css" rel="stylesheet">
-	<link href="~//Assets/blog bootstrap -bona/layout-1/css/styles.css" rel="stylesheet">
-	<link href="~/Assets/blog bootstrap -bona/layout-1/css/responsive.css" rel="stylesheet">
+		<!-- Stylesheets -->
+		<link href="~//Assets/blog bootstrap -bona/common-css/bootstrap.css" rel="stylesheet">
+		<link href="~//Assets/blog bootstrap -bona/common-css/ionicons.css" rel="stylesheet">
+		<link href="~//Assets/blog bootstrap -bona/layout-1/css/styles.css" rel="stylesheet">
+		<link href="~/Assets/blog bootstrap -bona/layout-1/css/responsive.css" rel="stylesheet">*@
 
 </head>
 <body>
@@ -79,7 +86,71 @@
 		}*@
 
 
-	<section class="blog-area section">
+	<!-- Blog Section -->
+
+	Search function not working now!!!
+
+	CK Editor not working
+
+	<section id="blog" class="blog-section light-section dark-content">
+		<div class="container">
+			<h1 class="special-heading dark-special">Cliff's Blog Index</h1>
+
+			<div class="row">
+				@foreach (var item in Model)
+
+				{
+
+					string strBody;
+					if (item.Body.Length > 60)
+					{
+						strBody = string.Concat(item.Body.Substring(0, 60), "...");
+					}
+					else
+					{
+						strBody = item.Body;
+					}
+
+					<div class="col-sm-4 post-col">
+
+						@if (User.IsInRole("Admin"))
+						{
+							@Html.ActionLink("Edit", "Edit", new { id = item.Id });
+							<b>------</b>
+							@Html.ActionLink("Delete", "Delete", new { id = item.Id });
+							<b>------</b>
+							@Html.DisplayFor(modelItem => item.Slug);
+
+						}
+
+						<figure>
+							<img src="@item.MediaURL" alt="Blog Image">
+						</figure>
+						<h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+
+
+						
+							@Html.Raw(strBody)
+						
+
+						@Html.ActionLink(item.Title, "Details", new { slug = item.Slug })
+						<ul class="post-footer">
+							<li><a href="#"><i class="ion-heart"></i>57</a></li>
+							<li><a href="#"><i class="ion-chatbubble"></i>@item.Comments.Count()</a></li>
+							<li><a href="#"><i class="ion-eye"></i>138</a></li>
+						</ul>
+
+
+					</div>
+				}
+
+			</div>
+		</div>
+	</section>
+	<!-- End of Blog Section -->
+
+
+	@*<section class="blog-area section">
 		<div class="container">
 			<div class="row">
 				@foreach (var item in Model)
@@ -110,23 +181,14 @@
 									@Html.DisplayFor(modelItem => item.Slug);
 
 								}
-								@*<div class="blog-image"><img src="@Html.DisplayFor(modelItem => item.MediaURL)" alt="Blog Image"></div>*@
+								
 								<div class="blog-image"><img src="@item.MediaURL" alt="Blog Image"></div>
 								<div class="blog-info">
 
 									<h3 class="title">
 										@Html.ActionLink(item.Title, "Details", new { slug = item.Slug })
 									</h3>
-
-									@*jQuery(document).ready(function( $ ) {
-
-										$("#element-to-truncate").dotdotdot({
-										// Options go here
-										});
-
-										});
-
-											How do i use this Jquery script?*@
+									
 									<div class="row">
 										<div class="col-md-12">
 											@Html.Raw(strBody)
@@ -136,7 +198,7 @@
 
 									<ul class="post-footer">
 										<li><a href="#"><i class="ion-heart"></i>57</a></li>
-										<li><a href="#"><i class="ion-chatbubble"></i>@item.Comments.Count()</a></li> @* get Comment.Count?*@
+										<li><a href="#"><i class="ion-chatbubble"></i>@item.Comments.Count()</a></li> 
 										<li><a href="#"><i class="ion-eye"></i>138</a></li>
 									</ul>
 
@@ -149,69 +211,70 @@
 
 		</div><!-- row -->
 
-	</section><!-- section -->
-	@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, searchStr = ViewBag.Search }))
+	</section><!-- section -->*@
+
+	@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)of @Model.PageCount @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, searchStr = ViewBag.Search }))
 
 	@*PagedListRenderOptions.ClassicPlusFirstAndLast)*@
 
 
 
-	<footer>
+	@*<footer>
 
-		<div class="container">
-			<div class="row">
+			<div class="container">
+				<div class="row">
 
-				<div class="col-lg-4 col-md-6">
-					<div class="footer-section">
+					<div class="col-lg-4 col-md-6">
+						<div class="footer-section">
 
-						<a class="logo" href="#"><img src="~/Assets/blog bootstrap -bona/images/logo.png" alt="Logo Image"></a>
-						<p class="copyright">Bona  2017. All rights reserved.</p>
-						<p class="copyright">Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-						<ul class="icons">
-							<li><a href="#"><i class="ion-social-facebook-outline"></i></a></li>
-							<li><a href="#"><i class="ion-social-twitter-outline"></i></a></li>
-							<li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
-							<li><a href="#"><i class="ion-social-vimeo-outline"></i></a></li>
-							<li><a href="#"><i class="ion-social-pinterest-outline"></i></a></li>
-						</ul>
+							<a class="logo" href="#"><img src="~/Assets/blog bootstrap -bona/images/logo.png" alt="Logo Image"></a>
+							<p class="copyright">Bona  2017. All rights reserved.</p>
+							<p class="copyright">Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+							<ul class="icons">
+								<li><a href="#"><i class="ion-social-facebook-outline"></i></a></li>
+								<li><a href="#"><i class="ion-social-twitter-outline"></i></a></li>
+								<li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+								<li><a href="#"><i class="ion-social-vimeo-outline"></i></a></li>
+								<li><a href="#"><i class="ion-social-pinterest-outline"></i></a></li>
+							</ul>
 
-					</div><!-- footer-section -->
-				</div><!-- col-lg-4 col-md-6 -->
+						</div><!-- footer-section -->
+					</div><!-- col-lg-4 col-md-6 -->
 
-				<div class="col-lg-4 col-md-6">
-					<div class="footer-section">
-						<h4 class="title"><b>CATEGORIES</b></h4>
-						<ul>
-							<li><a href="#">BEAUTY</a></li>
-							<li><a href="#">HEALTH</a></li>
-							<li><a href="#">MUSIC</a></li>
-						</ul>
-						<ul>
-							<li><a href="#">SPORT</a></li>
-							<li><a href="#">DESIGN</a></li>
-							<li><a href="#">TRAVEL</a></li>
-						</ul>
-					</div><!-- footer-section -->
-				</div><!-- col-lg-4 col-md-6 -->
+					<div class="col-lg-4 col-md-6">
+						<div class="footer-section">
+							<h4 class="title"><b>CATEGORIES</b></h4>
+							<ul>
+								<li><a href="#">BEAUTY</a></li>
+								<li><a href="#">HEALTH</a></li>
+								<li><a href="#">MUSIC</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">SPORT</a></li>
+								<li><a href="#">DESIGN</a></li>
+								<li><a href="#">TRAVEL</a></li>
+							</ul>
+						</div><!-- footer-section -->
+					</div><!-- col-lg-4 col-md-6 -->
 
-				<div class="col-lg-4 col-md-6">
-					<div class="footer-section">
+					<div class="col-lg-4 col-md-6">
+						<div class="footer-section">
 
-						<h4 class="title"><b>SUBSCRIBE</b></h4>
-						<div class="input-area">
-							<form>
-								<input class="email-input" type="text" placeholder="Enter your email">
-								<button class="submit-btn" type="submit"><i class="icon ion-ios-email-outline"></i></button>
-							</form>
-						</div>
+							<h4 class="title"><b>SUBSCRIBE</b></h4>
+							<div class="input-area">
+								<form>
+									<input class="email-input" type="text" placeholder="Enter your email">
+									<button class="submit-btn" type="submit"><i class="icon ion-ios-email-outline"></i></button>
+								</form>
+							</div>
 
-					</div><!-- footer-section -->
-				</div><!-- col-lg-4 col-md-6 -->
+						</div><!-- footer-section -->
+					</div><!-- col-lg-4 col-md-6 -->
 
-			</div><!-- row -->
-		</div><!-- container -->
+				</div><!-- row -->
+			</div><!-- container -->
 
-	</footer>
+		</footer>*@
 
 
 
@@ -222,16 +285,22 @@
 			// instance, using default configuration.
 			CKEDITOR.replace('editor1');
 		</script>
+		@*<script src="~/Assets/blog bootstrap -bona/common-js/jquery-3.1.1.min.js"></script>
+
+			<script src="~/Assets/blog bootstrap -bona/common-js/tether.min.js"></script>
+
+			<script src="~/Assets/blog bootstrap -bona/common-js/bootstrap.js"></script>
+			<script src="jquery.dotdotdot.js"></script>
+
+			<script src="~/Assets/blog bootstrap -bona/common-js/scripts.js"></script>*@
+
 		<script src="~/Assets/blog bootstrap -bona/common-js/jquery-3.1.1.min.js"></script>
 
 		<script src="~/Assets/blog bootstrap -bona/common-js/tether.min.js"></script>
 
 		<script src="~/Assets/blog bootstrap -bona/common-js/bootstrap.js"></script>
-		<script src="jquery.dotdotdot.js"></script>
 
 		<script src="~/Assets/blog bootstrap -bona/common-js/scripts.js"></script>
-
-
 
 	</body>
 
