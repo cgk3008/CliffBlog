@@ -3,6 +3,7 @@
 
 
 @model IPagedList<CliffPortfolio.Models.CliffBlogPost>
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
 	ViewBag.Title = "Index";
@@ -10,13 +11,13 @@
 
 @if (User.IsInRole("Admin"))
 {
-	
-<p>
-	<br />
-	@Html.ActionLink("Create New", "Create")
-	<br />
-	<br />
-</p>
+
+	<p>
+		<br />
+		@Html.ActionLink("Create New", "Create")
+		<br />
+		<br />
+	</p>
 
 }
 
@@ -29,20 +30,19 @@
 
 
 	<!-- Font -->
-		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
-		<!-- Stylesheets -->
-		<link href="~//Assets/blog bootstrap -bona/common-css/bootstrap.css" rel="stylesheet">
-		<link href="~//Assets/blog bootstrap -bona/common-css/ionicons.css" rel="stylesheet">
-		<link href="~//Assets/blog bootstrap -bona/layout-1/css/styles.css" rel="stylesheet">
-		<link href="~/Assets/blog bootstrap -bona/layout-1/css/responsive.css" rel="stylesheet">
+	<!-- Stylesheets -->
+	<link href="~//Assets/blog bootstrap -bona/common-css/bootstrap.css" rel="stylesheet">
+	<link href="~//Assets/blog bootstrap -bona/common-css/ionicons.css" rel="stylesheet">
+	<link href="~//Assets/blog bootstrap -bona/layout-1/css/styles.css" rel="stylesheet">
+	<link href="~/Assets/blog bootstrap -bona/layout-1/css/responsive.css" rel="stylesheet">
 
 </head>
 <body>
 
 
 	<!-- Blog Section -->
-
 	Search function not working now!!!
 
 	CK Editor not working
@@ -84,11 +84,11 @@
 						<h2>@Html.DisplayFor(modelItem => item.Title)</h2>
 
 
-						
-							@Html.Raw(strBody)
-						
 
-						@Html.ActionLink(item.Title, "Details", new { slug = item.Slug })
+						@Html.Raw(strBody)
+
+
+						@Html.ActionLink("Read More", "Details", new { slug = item.Slug })
 						<ul class="post-footer">
 							<li><a href="#"><i class="ion-heart"></i>57</a></li>
 							<li><a href="#"><i class="ion-chatbubble"></i>@item.Comments.Count()</a></li>
@@ -177,7 +177,7 @@
 			// Replace the <textarea id="editor1"> with a CKEditor
 			// instance, using default configuration.
 			CKEDITOR.replace('editor1');
-		</script>	
+		</script>
 
 		<script src="~/Assets/blog bootstrap -bona/common-js/jquery-3.1.1.min.js"></script>
 
@@ -192,4 +192,4 @@
 
 </html>
 	}
-	
+
