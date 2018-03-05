@@ -319,7 +319,7 @@
 							<figure><i class="fa fa-pencil"></i></figure>
 						</div>
 						<h2><a href="#">Illustration</a></h2>
-						<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
+						<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean solliciblog-section light-section dark-contenttudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
 					</div>
 				</div>
 			</div>
@@ -350,67 +350,69 @@
 					<h2>This is the title</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, adipisci, doloremque dolore temporibus numquam ex aliquam ullam eum doloribus voluptatibus suscipit quaerat vel quis consectetur libero. Architecto.</p>
 					<a href="#" @*@Html.ActionLink("Index", "CliffBlogPosts")"*@ class="btn read-more">Read More</a>
-					
+
 				</div>
 			</div>
 
-			<a href="#" class="btn btn-outline btn-darkblue more-blog">Go To Blog Index</a>
+			@Html.ActionLink("Go To Blog Index", "Index", "CliffBlogPosts", null, new { @class = "btn btn-outline btn-darkblue more-blog" })
 
+		 @*<a href = "../../../Views/CliffBlogPosts/Index.cshtml" class="btn btn-outline btn-darkblue more-blog">Go To Blog Index</a>*@
+
+</div>
+</section>
+<!-- End of Blog Section -->
+<!-- Clients Section -->
+<section id = "clients" class="parallax clients-section photo-section dark-section light-content">
+<div class="bg-overlay"></div>
+<div class="container">
+	<h1 class="special-heading light-special">My clients</h1>
+
+	<div class="carousel">
+		<div>
+			<span class="client-logo"><img src = "~/Assets/HTML/assets/google.png" alt="" /></span>
 		</div>
-	</section>
-	<!-- End of Blog Section -->
-	<!-- Clients Section -->
-	<section id="clients" class="parallax clients-section photo-section dark-section light-content">
-		<div class="bg-overlay"></div>
-		<div class="container">
-			<h1 class="special-heading light-special">My clients</h1>
-
-			<div class="carousel">
-				<div>
-					<span class="client-logo"><img src="~/Assets/HTML/assets/google.png" alt="" /></span>
-				</div>
-				<div>
-					<span class="client-logo"><img src="~/Assets/HTML/assets/yahoo.png" alt="" /></span>
-				</div>
-				<div>
-					<a href="#"><span class="client-logo"><img src="~/Assets/HTML/assets/visa.png" alt="" /></span></a>
-				</div>
-				<div>
-					<span class="client-logo"><img src="~/Assets/HTML/assets/paypal.png" alt="" /></span>
-				</div>
-				<div>
-					<span class="client-logo"><img src="~/Assets/HTML/assets/google.png" alt="" /></span>
-				</div>
-				<div>
-					<span class="client-logo"><img src="~/Assets/HTML/assets/yahoo.png" alt="" /></span>
-				</div>
-				<div>
-					<span class="client-logo"><img src="~/Assets/HTML/assets/visa.png" alt="" /></span>
-				</div>
-			</div>
-
+		<div>
+			<span class="client-logo"><img src = "~/Assets/HTML/assets/yahoo.png" alt="" /></span>
 		</div>
-	</section>
-	<!-- End of Client Section -->
-	<!-- Contact Section -->
-	<section id="contact" class="contact-section light-section dark-content">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<h1 class="special-heading dark-special">Drop me a line</h1>
-					<p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, facilis, id, maiores tempore adipisci a corporis magni fugiat facere quo dolor.</p>
-					<div class="row contact-informations">
-						<div class="col-sm-4">
-							<div class="contact-info clearfix">
-								<i class="fa fa-map-marker"></i>
-								<span>--<br>-</span>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="contact-info clearfix">
-								<i class="fa fa-envelope"></i>
-								@*<span>contact@@mysite.com</span>*@
-							</div>
+		<div>
+			<a href = "#" >< span class="client-logo"><img src = "~/Assets/HTML/assets/visa.png" alt="" /></span></a>
+		</div>
+		<div>
+			<span class="client-logo"><img src = "~/Assets/HTML/assets/paypal.png" alt="" /></span>
+		</div>
+		<div>
+			<span class="client-logo"><img src = "~/Assets/HTML/assets/google.png" alt="" /></span>
+		</div>
+		<div>
+			<span class="client-logo"><img src = "~/Assets/HTML/assets/yahoo.png" alt="" /></span>
+		</div>
+		<div>
+			<span class="client-logo"><img src = "~/Assets/HTML/assets/visa.png" alt="" /></span>
+		</div>
+	</div>
+
+</div>
+</section>
+<!-- End of Client Section -->
+<!-- Contact Section -->
+<section id = "contact" class="contact-section light-section dark-content">
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<h1 class="special-heading dark-special">Drop me a line</h1>
+			<p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Repellat, facilis, id, maiores tempore adipisci a corporis magni fugiat facere quo dolor.</p>
+			<div class="row contact-informations">
+				<div class="col-sm-4">
+					<div class="contact-info clearfix">
+						<i class="fa fa-map-marker"></i>
+						<span>--<br>-</span>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="contact-info clearfix">
+						<i class="fa fa-envelope"></i>
+		@*<span>contact@@mysite.com</span>*@
+		</div>
 						</div>
 						<div class="col-sm-4">
 							<div class="contact-info clearfix">
