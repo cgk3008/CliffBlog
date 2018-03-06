@@ -560,6 +560,9 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Properties\PublishProfiles\CliffPortfolio - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CliffPortfolio20180306015731 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CliffPortfolioAnotherTest - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -586,6 +589,19 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Uploads\20170427_213158.jpg" />
+    <Content Include="Uploads\20170504_164708.jpg" />
+    <Content Include="Uploads\20170510_130552.jpg" />
+    <Content Include="Uploads\20170521_155157rrr.gif" />
+    <Content Include="Uploads\20170607_154019bbbbb.jpg" />
+    <Content Include="Uploads\20171125_095816-bbbb.gif" />
+    <Content Include="Uploads\20171125_110004.jpg" />
+    <Content Include="Uploads\BugTracker_DBSpec.png" />
+    <Content Include="Uploads\d5fIHguu.jpg" />
+    <Content Include="Uploads\d5fIHguubbbbb.jpg" />
+    <Content Include="Uploads\image.jpg" />
+    <Content Include="Uploads\Marie-Thérèse-Walter_-Le-Rêve-Pablo-Picasso-1932_TheArtGorgeous.jpg" />
+    <Content Include="Uploads\Sagrada-Família-Unobstructed.png" />
     <Content Include="Views\Account\ConfirmationSent.cshtml" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BlogComment.cs" />
@@ -1068,7 +1084,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <None Include="Views\Home\index.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
     <Content Include="Assets\HTML\js\bootstrap.min.js" />
     <Content Include="Assets\HTML\js\grid.js" />
     <Content Include="Assets\HTML\js\html5shiv.js" />
@@ -1185,7 +1201,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

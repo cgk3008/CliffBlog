@@ -22,7 +22,8 @@ namespace CliffPortfolio
  //    controller = "BlogPosts",
  //    action = "Details",
  //    slug = UrlParameter.Optional
- //});
+ //});
+
 
             routes.MapRoute(
                 name: "NewSlug", 

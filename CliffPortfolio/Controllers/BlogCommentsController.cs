@@ -82,9 +82,6 @@ namespace CliffPortfolio.Controllers
                                                //.PostId});
 
                 //return Url.Action("Details", "CliffBlogPosts", new { id = "PostId" })
-
-
-
             }
 
             ViewBag.AuthorId = new SelectList(db.Users, "Id", "FirstName", blogComment.AuthorId);

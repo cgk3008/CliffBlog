@@ -1,0 +1,155 @@
+﻿@model CliffPortfolio.Models.CliffBlogPost
+
+
+@{
+	ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+	<h4>CliffBlogPost</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Created)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Created)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Updated)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Updated)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Title)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Title)
+		</dd>
+
+		@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+		{
+			<dt>
+				@Html.DisplayNameFor(model => model.MediaURL)
+
+			</dt>
+		}
+		<dd>
+			@*@Html.DisplayFor(model => model.MediaURL)*@
+			<img class="img-responsive" src="@Model.MediaURL" alt="">
+		</dd>
+		@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+		{
+			<dt>
+				@Html.DisplayNameFor(model => model.Body)
+			</dt>
+		}
+		<dd>
+			@*@Html.DisplayFor(model => model.Body)  copied code from Index pasted below, had to change item to Model*@
+			@Html.Raw(Model.Body)
+		</dd>
+
+		@if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+		{
+
+			<dt>
+				@Html.DisplayNameFor(model => model.Published)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Published)
+			</dd>
+
+			<dt>
+				@Html.DisplayNameFor(model => model.Slug)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Slug)
+			</dd>
+		}
+	</dl>
+</div>
+
+@*show list of comments
+
+	use foreach like the Index page*@
+
+
+@using (Html.BeginForm("Create", "BlogComments"))
+{
+	@Html.AntiForgeryToken()
+	@Html.Hidden("PostId", Model.Id) @*alternative method to utilize Id of post, likely need to modify or comment out <input name="Body"  ......*@
+	<div class="form-horizontal">
+		<h4>Comments</h4>
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+		@foreach (var comm in Model.Comments)
+
+		{
+			<div class="col-md-offset-2 col-md-10 border">
+				@*wrap this in a bootstrap "well"*@
+				@*<ul class="container-fluid position-relative no-side-padding">*@
+
+				@*I want to put DisplayName not AuthorId and then modify Created format for display*@
+				<h6>@Html.DisplayFor(model => comm.Author.FirstName) at @Html.DisplayFor(model => comm.Created, "{0:dd-MMM-yyyy}")</h6>
+				@*look for format addition to create date/time to code above!!!*@
+
+
+				<h4>@Html.DisplayFor(model => comm.Body)</h4>
+
+			</div>
+
+			if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+			{
+				<div class="col-md-offset-8 col-md-2 border">
+					@Html.ActionLink("Edit ----- ", "Edit", "BlogComments", new { id = comm.Id }, null)
+					@Html.ActionLink(" Details ----- ", "Details", "BlogComments", new { id = comm.Id }, null)
+					@Html.ActionLink("Delete", "Delete", "BlogComments", new { id = comm.Id }, null)
+
+				</div>
+			}
+
+			<br />
+		}
+
+		@*@Html.Partial("_CommentsPartial", new BlogComment() { PostId = Model.Id }) this is showing comments from a partial view, alternative method, may be incomplete*@
+
+		<input name="PostId" value="@Model.Id" hidden />
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-12">
+
+				@*<input name="Body" rows="10" cols="300" placeholder="Enter Comment" />*@
+
+				<textarea name="Body" id="editor1" rows="10" cols="80" placeholder="Enter Comment"></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-12">
+				@if (Request.IsAuthenticated)
+				{
+					<input type="submit" value="Submit Comment" class="btn btn-default" />
+
+					@*(Model, Page => Url.Action("Details")*@
+				}
+				else
+				{ <h4>LOGIN OR REGISTER TO SUBMIT COMMENTS</h4>
+					<input disabled type="submit" value="Submit Comment" class="btn btn-default" />
+				}
+
+			</div>
+		</div>
+	</div>
+
+
+}
+

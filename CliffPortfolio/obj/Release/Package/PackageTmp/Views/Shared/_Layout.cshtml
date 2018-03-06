@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>@ViewBag.Title - My ASP.NET Application</title>
+	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+	<link href="~/Scripts/ckeditor/contents.css" rel="stylesheet" />
+
+
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link href="~/Assets/blog bootstrap -bona/common-css/bootstrap.css" rel="stylesheet">
+	<link href="~/Assets/blog bootstrap -bona/common-css/ionicons.css" rel="stylesheet">
+	<link href="~/Assets/blog bootstrap -bona/layout-1/css/styles.css" rel="stylesheet">
+	<link href="~/Assets/blog bootstrap -bona/layout-1/css/responsive.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+	<!-- End of Navigation Bar -->
+	<header>
+		<div class="container-fluid position-relative no-side-padding">
+
+			<a href="#" class="logo"><img src="~/Assets/blog bootstrap -bona/images/logo.png" alt="Logo Image"></a>
+
+			<div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
+
+			<ul class="main-menu visible-on-click" id="main-menu">
+				<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+				<li><a href="#">Categories</a></li>
+				<li><a href="#">Features</a></li>
+				<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
+				<li>@Html.Partial("_LoginPartial")</li>
+			</ul>
+			<div class="src-area">
+				@using (Html.BeginForm("Index", "CliffBlogPosts", FormMethod.Post, htmlAttributes: new { @class = "form-inline topbar_search", role = "form" }))
+				{
+					//when typing a box appears outlined within search box.  How do I make it fit box style?
+					<form>
+						<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+						<input class="src-input" name="searchStr" type="text" placeholder="Search">
+					</form>
+				}
+			</div>
+
+			<!-- main-menu -->
+
+
+
+		</div><!-- conatiner -->
+	</header>
+
+
+	@*<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+						<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
+					</ul>
+					@Html.Partial("_LoginPartial")
+				</div>
+			</div>
+		</div>*@
+
+	<div class="container body-content">
+		@RenderBody()
+		@RenderSection("SPAViews", required: false)
+		<hr />
+		<footer>
+			<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+		</footer>
+	</div>
+
+	<!-- SCIPTS -->
+	<script src="~/Assets/blog bootstrap -bona/common-js/jquery-3.1.1.min.js"></script>
+	<script src="~/Assets/blog bootstrap -bona/common-js/tether.min.js"></script>
+	<script src="~/Assets/blog bootstrap -bona/common-js/bootstrap.js"></script>
+	<script src="~/Assets/blog bootstrap -bona/common-js/scripts.js"></script>
+
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+	<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+	@RenderSection("Scripts", required: false)
+
+
+</body>
+
+</html>
+
+
+
