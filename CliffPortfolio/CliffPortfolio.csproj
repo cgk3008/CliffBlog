@@ -1084,6 +1084,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Home\Index - Copy.cshtml" />
+    <Content Include="Views\CliffBlogPosts\Index - Copy.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <Content Include="Assets\HTML\js\bootstrap.min.js" />
     <Content Include="Assets\HTML\js\grid.js" />
