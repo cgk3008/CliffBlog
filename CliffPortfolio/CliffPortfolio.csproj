@@ -1086,7 +1086,6 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\Index - Copy.cshtml" />
     <Content Include="Views\CliffBlogPosts\Index - Copy.cshtml" />
-    <None Include="Views\Home\Index.cshtml" />
     <Content Include="Assets\HTML\js\bootstrap.min.js" />
     <Content Include="Assets\HTML\js\grid.js" />
     <Content Include="Assets\HTML\js\html5shiv.js" />
@@ -1163,6 +1162,7 @@
     <Content Include="Scripts\SyntaxHighlighter\shBrushXml.js" />
     <Content Include="Scripts\SyntaxHighlighter\shCore.js" />
     <Content Include="Scripts\SyntaxHighlighter\shLegacy.js" />
+    <None Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />

@@ -126,6 +126,7 @@ namespace CliffPortfolio.Controllers
                     cliffBlogPosts.MediaURL = "/Uploads/" + fileName; //change URL to Url??
                 }
 
+                
                 cliffBlogPosts.Slug = Slug;
                 cliffBlogPosts.Created = DateTime.Now;
                 db.Posts.Add(cliffBlogPosts);
