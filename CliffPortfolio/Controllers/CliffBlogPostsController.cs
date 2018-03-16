@@ -172,6 +172,7 @@ namespace CliffPortfolio.Controllers
                 } //change URL to Url
 
                 db.Entry(cliffBlogPosts).State = EntityState.Modified;
+                cliffBlogPosts.Updated = DateTime.Now;
                 //db.Posts.Add(image);  // do I need this line?  I added, seems like I do but get squiggles under image
                 db.SaveChanges();
                 return RedirectToAction("Index");

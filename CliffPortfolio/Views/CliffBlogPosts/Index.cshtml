@@ -96,9 +96,9 @@
 										@Html.DisplayFor(modelItem => item.Title)
 									</h4>
 
-									@Html.Raw(strBody)
+									<h5> @Html.Raw(strBody)</h5>
 
-									@Html.ActionLink("Read More", "Details", new { slug = item.Slug })
+									<h5>@Html.ActionLink("Read More", "Details", new { slug = item.Slug })</h5>
 									<ul class="post-footer">
 										<li><a href="#"><i class="ion-heart"></i>57</a></li>
 										<li><a href="#"><i class="ion-chatbubble"></i>@item.Comments.Count()</a></li>
