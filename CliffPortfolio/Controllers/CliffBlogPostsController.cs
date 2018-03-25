@@ -42,7 +42,7 @@ namespace CliffPortfolio.Controllers
             if (searchStr != null)
             {
                 result = db.Posts.AsQueryable();
-
+                //use listposts method and add together queries to only show published blogposts (check marked posts in details)
                 result = result.Where(p => p.Body.Contains(searchStr))
                                 .Union(db.Posts.Where(p => p.Title.Contains(searchStr)))
                                 .Union(db.Posts.Where(p => p.Comments.Any(c => c.Body.Contains(searchStr))))

@@ -33,10 +33,10 @@
 			<div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
 
 			<ul class="main-menu visible-on-click" id="main-menu">
-				<li>@Html.ActionLink("Portfolio", "Index", "Home", new { area = "" }, null)</li>
+				@*<li>@Html.ActionLink("Portfolio", "Index", "Home", new { area = "" }, null)</li>*@
 				<li>@Html.ActionLink("Blog Index", "Index", "CliffBlogPosts", new { area = "" }, null)</li>
 				@*<li><a href="#">Features</a></li>*@
-				<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
+				@*<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>*@
 				<li>@Html.Partial("_LoginPartial")</li>
 			</ul>
 			<div class="src-area">
@@ -83,7 +83,7 @@
 		@RenderSection("SPAViews", required: false)
 		<hr />
 		<footer>
-			<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+			@*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
 		</footer>
 	</div>
 
