@@ -28,15 +28,15 @@
 	<header>
 		<div class="container-fluid position-relative no-side-padding">
 
-			<a href="#" class="logo"><img src="~/Assets/blog bootstrap -bona/images/logo.png" alt="Logo Image"></a>
+			@*<a href="#" class="logo"><img src="~/Assets/blog bootstrap -bona/images/logo.png" alt="Logo Image"></a>*@
 
 			<div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
 
 			<ul class="main-menu visible-on-click" id="main-menu">
-				<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-				<li><a href="#">Categories</a></li>
-				<li><a href="#">Features</a></li>
-				<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
+				@*<li>@Html.ActionLink("Portfolio", "Index", "Home", new { area = "" }, null)</li>*@
+				<li>@Html.ActionLink("Blog Index", "Index", "CliffBlogPosts", new { area = "" }, null)</li>
+				@*<li><a href="#">Features</a></li>*@
+				@*<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>*@
 				<li>@Html.Partial("_LoginPartial")</li>
 			</ul>
 			<div class="src-area">
@@ -83,7 +83,7 @@
 		@RenderSection("SPAViews", required: false)
 		<hr />
 		<footer>
-			<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+			@*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
 		</footer>
 	</div>
 
@@ -92,10 +92,10 @@
 	<script src="~/Assets/blog bootstrap -bona/common-js/tether.min.js"></script>
 	<script src="~/Assets/blog bootstrap -bona/common-js/bootstrap.js"></script>
 	<script src="~/Assets/blog bootstrap -bona/common-js/scripts.js"></script>
+	<script src="~/Scripts/ckeditor/ckeditor.js"></script>
 
 	@Scripts.Render("~/bundles/jquery")
-	@Scripts.Render("~/bundles/bootstrap")
-	<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+	@Scripts.Render("~/bundles/bootstrap")	
 	@RenderSection("Scripts", required: false)
 
 

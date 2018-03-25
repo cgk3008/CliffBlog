@@ -203,3 +203,4 @@ C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\Cli
 C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\obj\Release\CliffPortfolio.csproj.CoreCompileInputs.cache
 C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\obj\Release\CliffPortfolio.dll
 C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\obj\Release\CliffPortfolio.pdb
+C:\Users\cgk30\OneDrive\Documents\Visual Studio 2017\Projects\CliffPortfolio\CliffPortfolio\obj\Release\CliffPortfolio.csproj.CopyComplete
