@@ -1,4 +1,5 @@
-﻿@{
+﻿@model CliffPortfolio.Models.Email
+@{
 	Layout = null;
 }
 
@@ -12,15 +13,15 @@
 
 	<title>Cliff's Portfolio</title>
 
-	<link href="~/Assets/Html/favicon.ico" rel="icon" type="image/x-icon" />
-	<link rel="stylesheet" href="~/Assets/Html/css/bootstrap.css" />
+	<link href="~/favicon.ico" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" href="~/Assets/HTML/css/bootstrap.css" />
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="~/Assets/Html/css/style.css" />
+	<link rel="stylesheet" href="~/Assets/HTML/css/style.css" />
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
-	  <script src="~/Assets/Html/js/html5shiv.js"></script>
-	  <script src="~/Assets/Html/js/respond.min.js"></script>
+	  <script src="~/Assets/HTML/js/html5shiv.js"></script>
+	  <script src="~/Assets/HTML/js/respond.min.js"></script>
 	<![endif]-->
 </head>
 
@@ -32,7 +33,7 @@
 		<div class="container">
 
 			<div class="navbar-header">
-				@*<a class="navbar-brand" href="#"><img class="logo" src="~/Assets/Html/assets/logo.png" alt=""></a>*@
+				<!--<a class="navbar-brand" href="#"><img class="logo" src="~/Assets/HTML/assets/logo.png" alt=""></a>-->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -44,10 +45,10 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#welcome">Home</a></li>
 					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#testimonials">Testimonials</a></li>
-					<li><a href="#team">Team</a></li>
-					<li><a href="#services">Services</a></li>
+					<li><a href="#testimonials">Philosophy</a></li>
 					<li><a href="#blog">Blog</a></li>
+					<li><a href="#team">About</a></li>
+					@*<li><a href="#services">Services</a></li>*@
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav><!--/.navbar-collapse -->
@@ -61,17 +62,21 @@
 		<div class="container">
 			<div class="content-wrapper">
 				<div class="welcome-content">
-					<h1 class="special-heading light-special">We are Crafto</h1>
+					<h1 class="special-heading light-special">Cliff Koenig</h1>
 					<p>
-						<span>Our daily purpose is to build your web experience by</span>
-						<span class="rotating-words">creating your image, building your presence, boosting your income</span>
+						<span>
+							MY PURPOSE IS TO HELP YOU BUILD SOLUTIONS
+							@*LET'S CLIMB TO THE TOP*@
+
+						</span>
+						<span class="rotating-words">Full-Stack Development, Teamwork and Debugging, SDLC Process</span>
 					</p>
 					<div class="social-icons light-icons">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-linkedin"></i></a>
-						<a href="#"><i class="fa fa-pinterest"></i></a>
-						<a href="#"><i class="fa fa-google-plus"></i></a>
+						@*<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-linkedin"></i></a>
+							<a href="#"><i class="fa fa-pinterest"></i></a>
+							<a href="#"><i class="fa fa-google-plus"></i></a>*@
 					</div>
 					<div class="scroll-more">
 						<span>Scroll down</span>
@@ -87,116 +92,72 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h1 class="special-heading dark-special">Our Work</h1>
-					<p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+					<h1 class="special-heading dark-special">Projects</h1>
+					<p class="section-description">I have developed a variety of projects that showcase an understanding of front-end website design, back-end database utilization and mobile applications.</p>
 				</div>
 			</div>
 
-			<div class="filter-bar clearfix">
-				<ul class="filter-list">
-					<li class="filter btn btn-medium btn-darkblue btn-outline active" data-id="all">All</li>
-					<li class="filter btn btn-medium btn-darkblue btn-outline" data-id="web-design">Web design</li>
-					<li class="filter btn btn-medium btn-darkblue btn-outline" data-id="ui-design">UI design</li>
-					<li class="filter btn btn-medium btn-darkblue btn-outline" data-id="graphics">Graphics</li>
-					<li class="filter btn btn-medium btn-darkblue btn-outline" data-id="add-ons">Add-Ons</li>
-				</ul>
-
-				<a href="#" class="more-work btn btn-medium btn-darkblue btn-outline">All my work</a>
-			</div>
-
+			@*<a href="" data-toggle="modal" data-target="#max">See My Work</a>*@
 
 			<div class="main">
 				<ul id="og-grid" class="og-grid">
 					<li class="portfolio-item visible-item" data-id="add-ons graphics">
-						<a href="https://wrapbootstrap.com/user/stefusilviu" data-largesrc="~/Assets/Html/assets/work1-big.jpg" data-category="Add-Ons Graphics" data-date="Apr 10th, 2014" data-title="Azuki bean" data-description="This is a pack of 10 Vintage text styles. You can use all these styles in web design or web apps but I've made them in 2 different sizes, so you can use those vintage text styles even on print materials. With this Vintage Text Styles pack you can design a logo, a title or any text in web or print materials.">
-							<img src="~/Assets/Html/assets/work1-big.jpg" alt="Breath - Vintage Text Styles" />
-							<div class="overlay-content">
-								<h4>Breath - Vintage Text Styles</h4>
-								<p>This is a pack of 10 Vintage text styles. You can use all these styles in web design or web apps but I've made them in 2 different sizes, so you can use those...</p>
-							</div>
-						</a>
+
+						@*<a href="https://" data-largesrc="~/Assets/HTML/assets/imagebloglayout-resized670-440.png" data-category="Add-Ons Graphics" data-date="February 26, 2018" data-title="Personal Blog" data-description="The blog application and created the database using Code First Migrations with LINQ and Entity Framework. Additional technologies utilized include CK Editor and Syntax Highlighter. The CK Editor allows the administrator to display different fonts and color schemes. ">*@
+						<h3>Blog Website</h3>
+						@*<p>Designed a blog website for posting brief thoughts, guidance or opinion pieces.</p>*@
+						<img src="~/Assets/HTML/assets/imagebloglayout-resized670-440.png" alt="Breath - Vintage Text Styles" />
+						<div class="overlay-content">
+							<h3><a href="https://cliffblog.azurewebsites.net/CliffBlogPosts">See Blog Website</a></h3>
+						</div>
+
 					</li>
 					<li class="portfolio-item visible-item" data-id="graphics">
-						<a href="https://wrapbootstrap.com/user/stefusilviu" data-largesrc="~/Assets/Html/assets/work2-big.jpg" data-category="Graphics" data-date="Apr 10th, 2014" data-title="Business Card Mockups - pack 2" data-description="<p>Now you can show your mousemade artwork to your clients with style. This is my second pack of Mockup Templates for your Business Cards or Business Card Templates. You can use this mockups pack to present your designs in a better artistic way. Also you can use these business cards mockups for your logo previews to show how the logo looks on a printed card.</p><p>The Mockups pack includes 4 Templates with very realistic perspective and photo effects.Features on this</p><h4>Features:</h4><ul><li>includes 4 PSD files very well organized</li><li>realistic photo effects</li><li>realistic perspective and depth of field</li><li>designs made with smart objects</li></ul>">
-							<img src="~/Assets/Html/assets/work2-big.jpg" alt="Business Card Mockups - pack 2" />
-							<div class="overlay-content">
-								<h4>Business Card Mockups - pack 2</h4>
-								<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.</p>
-							</div>
-						</a>
-					</li>
-					<li class="portfolio-item visible-item" data-id="ui-design">
-						<a href="https://wrapbootstrap.com/user/stefusilviu" data-largesrc="~/Assets/Html/assets/work3-big.jpg" data-category="UI Design" data-date="Apr 10th, 2014" data-title="Whitepixels UI v1.1" data-description="This is a great pack of premade graphics and web elements designed to help you create applications, great online services or websites. All elements are vector shapes so you can resize them without quality loss. The pack includes: buttons, knobs, forms, sliders, menu bar, switches, directional buttons, list selector, equalizer interface, timeline and a lot more. Every single element was designed with all my atention on details. I hope you'll like and recommend it.">
-							<img src="~/Assets/Html/assets/work3-big.jpg" alt="Whitepixels UI v1.1" />
-							<div class="overlay-content">
-								<h4>Whitepixels UI v1.1</h4>
-								<p>This is a great pack of premade graphics and web elements designed to help you create applications, great online services or websites. All elements are vector...</p>
-							</div>
-						</a>
-					</li>
-					<li class="portfolio-item visible-item" data-id="graphics">
-						<a href="https://wrapbootstrap.com/user/stefusilviu" data-largesrc="~/Assets/Html/assets/work4-big.jpg" data-category="Graphics" data-date="Apr 10th, 2014" data-title="Hardcover Book Mockups - mega pack" data-description="<p>If you are a writer, web designer or graphic designer and you need to showcase a book in minutes, this is the product you need. With just few clicks, your Hardcover book is prepared to be shown to the world with style. You only need to paste your title and graphics and your book is ready.</p><p>This Book Mockups pack contains 15 well-made and well-organized PSD files with transparent background. So you can easily save your book as png file and insert it on your design. Every file includes the wood background but you can still add your own. The Hardcover Book Mockups are made in hi-res so you can use them even on print materials.</p>">
-							<img src="~/Assets/Html/assets/work4-big.jpg" alt="Hardcover Book Mockups - mega pack" />
-							<div class="overlay-content">
-								<h4>Hardcover Book Mockups - mega pack</h4>
-								<p>If you are a writer, web designer or graphic designer and you need to showcase a book in minutes, this is the product you need. With just few clicks...</p>
-							</div>
-						</a>
-					</li>
-					<li class="portfolio-item visible-item" data-id="ui-design">
-						<a href="https://wrapbootstrap.com/user/stefusilviu" data-largesrc="~/Assets/Html/assets/work5-big.jpg" data-category="UI Design" data-date="Apr 10th, 2014" data-title="CreamUI - mobile interface kit" data-description="<p>This is a great mobile UI pack designed to help you create applications for iPhone and iPad with Retina screen. You can modify all graphics and styles just as you want, and use any of included elements: buttons, knobs, sliders, image thumbnails, progress bars, shelfs, forms, checkboxes, call-to-action buttons, audio and video player, switches and a lot more...</p><p>Every single button of this mobile UI pack is designed in 2 versions: normal and pressed. Also all graphics are vector. It means that you can resize every single element without losing quality.</p>">
-							<img src="~/Assets/Html/assets/work5-big.jpg" alt="CreamUI - mobile interface kit" />
-							<div class="overlay-content">
-								<h4>CreamUI - mobile interface kit</h4>
-								<p>This is a great mobile UI pack designed to help you create applications for iPhone and iPad with Retina screen. You can modify all graphics and styles just...</p>
-							</div>
-						</a>
-					</li>
-					<li class="portfolio-item visible-item" data-id="web-design">
-						<a href="https://wrapbootstrap.com/user/stefusilviu" data-largesrc="~/Assets/Html/assets/work6-big.jpg" data-category="Web Design" data-date="Apr 10th, 2014" data-title="PlanusWP - One Page Wordpress Theme" data-description="<p>PlanusWP is a responsive one-page Wordpress theme built on Twitter Bootstrap 3 framework. PlanusWP theme is ment to present you as a designer or creative professional to the world. Moreover, this theme can be adapted to any kind of creative agency. This theme was built using the latest features from Bootstrap 3 so it's responsive (mobile first), flat and very nice animated.</p><p>The home page is very customizable as you can reorder the section using drag-and-drop technique. Also you can customize any feature due to the powerful custom admin options.</p><p>PlanusWP is a nice and simple theme allows you to create content and bring attention to it. You don't need to worry about contact plugin, as the contact form is stand-alone. Just add your email adress and all is done.</p>">
-							<img src="~/Assets/Html/assets/work6-big.jpg" alt="PlanusWP - One Page Wordpress Theme" />
-							<div class="overlay-content">
-								<h4>PlanusWP - One Page Wordpress Theme</h4>
-								<p>PlanusWP is a responsive one-page Wordpress theme built on Twitter Bootstrap 3 framework. PlanusWP theme is ment to present you as a designer or...</p>
-							</div>
-						</a>
-					</li>
+						@*<a href="" data-largesrc="~/Assets/HTML/assets/bugtracker-page-001.png" data-category="Graphics" data-date="Coming Soon" data-title="Bug Tracker" data-description="<p>	Methodically designed and developed a multi-functional project/issue tracker web application, integrating enhanced roles, security and file uploading features. Employed SQL Server using Code First Relational database design.						</p><h4>Technologies used include:</h4><ul><li>.Net Framework v. 4.6.1</li><li>C# and MVC6</li><li>LINQ</li><li>SQL</li><li>Entity Framework</li><li>jQuery DataTables</li></ul> ">*@
+						<h3>Bug Tracker</h3>
+						@*<p>To be added at a later date.</p>*@
+						<img src="~/Assets/HTML/assets/bugtracker-page-001.png" @*alt="Business Card Mockups - pack 2"*@>
+						<div class="overlay-content" />
+						<h3>@Html.ActionLink("See Demo", "ComingSoon", "Home")</h3>
 				</ul>
 			</div>
+
+
 		</div>
+
 	</section>
 	<!-- End of Portfolio Section -->
 	<!-- Testimonials Section -->
 	<section id="testimonials" class="parallax testimonials-section photo-section dark-section light-content">
 		<div class="bg-overlay"></div>
 		<div class="container">
-			<h1 class="special-heading light-special">What my clients say</h1>
+			<h1 class="special-heading light-special">Philosophy</h1>
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
 					<div class="quote-separator"></div>
 					<div id="testimonials-rotator" class="testimonials-rotator">
 						<div class="testimonial">
 							<blockquote>
-								<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.</p>
-								<footer>Silviu Stefu</footer>
+								<p>CODING</p>
+								<footer>Software is constantly changing. I am eager to learn new languages and platforms. Keeping up-to-date on new trends can potentially improve efficiency which is valuable to everyone.</footer>
 							</blockquote>
 						</div>
 						<div class="testimonial">
 							<blockquote>
-								<p>Nothing will benefit human health and increase the chances for survival of life on Earth as much as the evolution to a vegetarian diet.</p>
-								<footer>Albert Einstein</footer>
+								<p>FULL-STACK DEVELOPMENT</p>
+								<footer> @*Understanding A to Z.*@ Software development involes an array of tools and technologies to create professional and user-friendly applications. Having experience in front-end and back-end development allows me to assist with various duties and reduces the potential for negative impacts on other functions.</footer>
 							</blockquote>
 						</div>
 						<div class="testimonial">
 							<blockquote>
-								<p>If you don't want to be beaten, imprisoned, mutilated, killed or tortured then you shouldn't condone such behaviour towards anyone, be they human or not.</p>
-								<footer>Moby</footer>
+								<p>TEAMWORK</p>
+								<footer>Communication is key to creating functional applications. I am happy to assist as "another set of eyes" or in debugging tasks. Likewise, I am comfortable asking for assistance if I am spinning my wheels on a solution. </footer>
 							</blockquote>
 						</div>
 						<div class="testimonial">
 							<blockquote>
-								<p>My body will not be a tomb for other creatures.</p>
-								<footer>Leonardo Da Vinci</footer>
+								<p>SDLC PROCESS</p>
+								<footer>Be adaptable to various development and business processes. I am comfortable in supporting various SDLC processes including Agile, Waterfall and V-Model.   </footer>
 							</blockquote>
 						</div>
 					</div>
@@ -205,120 +166,6 @@
 		</div>
 	</section>
 	<!-- End of Testimonials Section -->
-	<!-- Team Section -->
-	<section id="team" class="team-section light-section dark-content">
-		<div class="container">
-			<h1 class="special-heading dark-special">Our Team</h1>
-
-			<div class="row">
-				<div class="col-md-4">
-					<div class="team-member">
-						<div class="profile-picture">
-							<figure><img src="~/Assets/Html/assets/team1.jpg" alt=""></figure>
-							<div class="profile-overlay"></div>
-							<div class="profile-social">
-								<div class="icons-wrapper">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-linkedin"></i></a>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-								</div>
-							</div>
-						</div>
-						<h3><a href="#">Jonathan Doe</a></h3>
-						<span>Creative Director</span>
-						<div class="team-bio">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, fugiat, harum, adipisci accusantium minus quasi asperiores enim voluptas quisquam voluptatem.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="team-member">
-						<div class="profile-picture">
-							<figure><img src="~/Assets/Html/assets/team2.jpg" alt=""></figure>
-							<div class="profile-overlay"></div>
-							<div class="profile-social">
-								<div class="icons-wrapper">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-linkedin"></i></a>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-								</div>
-							</div>
-						</div>
-						<h3><a href="#">Jennifer Smith</a></h3>
-						<span>Graphic designer</span>
-						<div class="team-bio">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, fugiat, harum, adipisci accusantium minus quasi asperiores enim voluptas quisquam.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="team-member">
-						<div class="profile-picture">
-							<figure><img src="~/Assets/Html/assets/team3.jpg" alt=""></figure>
-							<div class="profile-overlay"></div>
-							<div class="profile-social">
-								<div class="icons-wrapper">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-linkedin"></i></a>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-								</div>
-							</div>
-						</div>
-						<h3><a href="#">Silviu Stefu</a></h3>
-						<span>Marketing director</span>
-						<div class="team-bio">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, fugiat, harum, adipisci accusantium minus quasi asperiores enim voluptas quisquam voluptatem quis.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End of Team Section -->
-	<!-- Services Section -->
-	<section id="services" class="parallax services-section photo-section dark-section light-content">
-		<div class="bg-overlay"></div>
-		<div class="container">
-			<h1 class="special-heading light-special">Our Services</h1>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="service-col">
-						<div class="service-icon">
-							<figure><i class="fa fa-camera"></i></figure>
-						</div>
-						<h2><a href="#">Photography</a></h2>
-						<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="service-col">
-						<div class="service-icon">
-							<figure><i class="fa fa-rocket"></i></figure>
-						</div>
-						<h2><a href="#">Branding</a></h2>
-						<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="service-col">
-						<div class="service-icon">
-							<figure><i class="fa fa-pencil"></i></figure>
-						</div>
-						<h2><a href="#">Illustration</a></h2>
-						<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</section>
-	<!-- End of Services Section -->
 	<!-- Blog Section -->
 	<section id="blog" class="blog-section light-section dark-content">
 		<div class="container">
@@ -326,124 +173,193 @@
 
 			<div class="row">
 				<div class="col-sm-4 post-col">
-					<figure><img src="~/Assets/Html/assets/post1.jpg" alt=""></figure>
-					<h2>Lorem ipsum dolor</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta repellat hic deleniti dignissimos provident cupiditate quibusdam adipisci facere? Nobis, ducimus, ullam commodi inventore consequuntur adipisci quam cupiditate vel optio rerum.</p>
-					<a href="" class="btn read-more">Read More</a>
+					<figure><img src="~/Assets/HTML/assets/frustrated-960x540.png" alt=""></figure>
+					<h2>Mastering Frustration</h2>
+					<p>Learning to code can be quite frustrating at times.</p>
+					<a href="https://cliffblog.azurewebsites.net/CliffBlogPosts/Details/mastering-frustration" class="btn read-more">Read More</a>
 				</div>
 				<div class="col-sm-4 post-col">
-					<figure><img src="~/Assets/Html/assets/post2.jpg" alt=""></figure>
-					<h2>This is a long blog post</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, molestias, repellat, animi, fugit aliquid fuga saepe nisi quasi debitis voluptate odit beatae atque tempora ad excepturi nemo velit obcaecati vitae.</p>
-					<a href="" class="btn read-more">Read More</a>
+					<figure><img src="~/Assets/HTML/assets/20171125_095816-bbbb-960x540.png" alt=""></figure>
+					<h2>Peru</h2>
+					<p>Always nice to get away!</p>
+					<a href="https://cliffblog.azurewebsites.net/CliffBlogPosts/Details/peru" class="btn read-more">Read More</a>
 				</div>
 				<div class="col-sm-4 post-col">
-					<figure><img src="~/Assets/Html/assets/post3.jpg" alt=""></figure>
-					<h2>This is the title</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, adipisci, doloremque dolore temporibus numquam ex aliquam ullam eum doloribus voluptatibus suscipit quaerat vel quis consectetur libero. Architecto.</p>
-					<a href="" class="btn read-more">Read More</a>
+					<figure><img src="~/Assets/HTML/assets/365728-636190610546181732-16x9-960x540.png" alt=""></figure>
+					<h2>Teamwork</h2>
+					<p>Software development requires teamwork.</p>
+					<a href="https://cliffblog.azurewebsites.net/CliffBlogPosts/Details/teamwork" class="btn read-more">Read More</a>
 				</div>
 			</div>
 
-			<a href="#" class="btn btn-outline btn-darkblue more-blog">Read Our Blog</a>
+			<div class="text-center">
+				<a href="https://cliffblog.azurewebsites.net/CliffBlogPosts" class="btn btn-outline btn-darkblue more-blog">See Blog Posts</a>
+			</div>
+
+
+
+
+
 
 		</div>
 	</section>
 	<!-- End of Blog Section -->
-	<!-- Clients Section -->
-	<section id="clients" class="parallax clients-section photo-section dark-section light-content">
+	<!-- Team Section -->
+	@*<section id="team" class="team-section light-section dark-content">*@
+	<section id="team" class="parallax services-section photo-section light-section dark-content">
 		<div class="bg-overlay"></div>
 		<div class="container">
-			<h1 class="special-heading light-special">My clients</h1>
+			<h1 class="special-heading light-special">About me</h1>
+			@*<section id="team" class="parallax services-section photo-section dark-section light-content">
+				<div class="bg-overlay"></div>
+				<div class="container">
+					<h1 class="special-heading light-special">About Me</h1>*@
 
-			<div class="carousel">
-				<div>
-					<span class="client-logo"><img src="~/Assets/Html/assets/google.png" alt="" /></span>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="team-member">
+						<div class="profile-picture">
+							<figure><img src="~/Assets/HTML/assets/cliff tux 2.jpg" /></figure>
+							<div class="profile-overlay"></div>
+							<div class="profile-social">
+								<div class="icons-wrapper">
+									@*<a href="#"><i class="fa fa-facebook"></i></a>
+										<a href="#"><i class="fa fa-twitter"></i></a>
+											<a href="#"><i class="fa fa-linkedin"></i></a>
+											<a href="#"><i class="fa fa-pinterest"></i></a>
+										<a href="#"><i class="fa fa-google-plus"></i></a>*@
+								</div>
+							</div>
+						</div>
+						@*<h3><a href="#">Cliff Koenig</a></h3>*@
+						<h3><span>Experience</span></h3>
+						<div class="team-bio">
+							<p>My skills include development of web based applications on the ASP.NET framework. My past experience includes leading and working with teams of professionals to design, permit and construct large scale environmental projects to remediate contamination.</p>
+						</div>
+					</div>
 				</div>
-				<div>
-					<span class="client-logo"><img src="~/Assets/Html/assets/yahoo.png" alt="" /></span>
+				<div class="col-md-4">
+					<div class="team-member">
+						<div class="profile-picture">
+							<figure><img src="~/Assets/HTML/assets/CliffKoenigsquare12.jpg" alt=""></figure>
+							<div class="profile-overlay"></div>
+							<div class="profile-social">
+								<div class="icons-wrapper">
+									@*<a href="#"><i class="fa fa-facebook"></i></a>
+										<a href="#"><i class="fa fa-twitter"></i></a>
+											<a href="#"><i class="fa fa-linkedin"></i></a>
+											<a href="#"><i class="fa fa-pinterest"></i></a>
+										<a href="#"><i class="fa fa-google-plus"></i></a>*@
+								</div>
+							</div>
+						</div>
+						@*<h3><a href="#">Jennifer Smith</a></h3>*@
+						<h3><span>TECHNOLOGIES UTILIZED</span></h3>
+						<div class="team-bio">
+							<p>C#/MVC, HTML5, CSS3, BOOTSTRAP, JS & jQuery, LINQ, SQL, Entity Framework, jQuery DataTables.</p>
+						</div>
+					</div>
 				</div>
-				<div>
-					<a href="#"><span class="client-logo"><img src="~/Assets/Html/assets/visa.png" alt="" /></span></a>
-				</div>
-				<div>
-					<span class="client-logo"><img src="~/Assets/Html/assets/paypal.png" alt="" /></span>
-				</div>
-				<div>
-					<span class="client-logo"><img src="~/Assets/Html/assets/google.png" alt="" /></span>
-				</div>
-				<div>
-					<span class="client-logo"><img src="~/Assets/Html/assets/yahoo.png" alt="" /></span>
-				</div>
-				<div>
-					<span class="client-logo"><img src="~/Assets/Html/assets/visa.png" alt="" /></span>
+				<div class="col-md-4">
+					<div class="team-member">
+						<div class="profile-picture">
+							<figure><img src="~/Assets/HTML/assets/race_2403_photo_223.jpg" alt=""></figure>
+							<div class="profile-overlay"></div>
+							<div class="profile-social">
+								<div class="icons-wrapper">
+									@*<a href="#"><i class="fa fa-facebook"></i></a>
+										<a href="#"><i class="fa fa-twitter"></i></a>
+											<a href="#"><i class="fa fa-linkedin"></i></a>
+											<a href="#"><i class="fa fa-pinterest"></i></a>
+										<a href="#"><i class="fa fa-google-plus"></i></a>*@
+								</div>
+							</div>
+						</div>
+						@*<h3><a href="#">Silviu Stefu</a></h3>*@
+						<h3><span>HOBBIES</span></h3>
+						<div class="team-bio">
+							<p>I enjoy participating in several sports including beach volleyball, mudruns and softball. I appreciate traveling to different countries to broaden my view of the world.</p>
+						</div>
+					</div>
 				</div>
 			</div>
-
 		</div>
 	</section>
-	<!-- End of Client Section -->
+	<!-- End of About Cliff Section -->
 	<!-- Contact Section -->
 	<section id="contact" class="contact-section light-section dark-content">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 					<h1 class="special-heading dark-special">Drop me a line</h1>
-					<p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, facilis, id, maiores tempore adipisci a corporis magni fugiat facere quo dolor.</p>
+					<p class="section-description">Feel free to send me an email if you are interested in discussing coding and employment opportunities. </p>
 					<div class="row contact-informations">
-						<div class="col-sm-4">
-							<div class="contact-info clearfix">
-								<i class="fa fa-map-marker"></i>
-								<span>Freedom Street, 245<br>Amsterdam</span>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="contact-info clearfix">
-								<i class="fa fa-envelope"></i>
-								<span>contact@mysite.com</span>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="contact-info clearfix">
-								<i class="fa fa-phone"></i>
-								<span>235 214 2326</span>
-							</div>
-						</div>
+
+						@using (Html.BeginForm("Contact", "Home"))
+						{
+							@Html.AntiForgeryToken()
+							@Html.ValidationSummary("", new { @class = "text-danger" })
+							@*@Html.Hidden(Model.Subject = "Portfolio Contact Email")*@
+							<div id="result"></div>
+
+							<form id="contact_form" class="contact-form" action="contact.php" method="post">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											@Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
+
+											@Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
+											@Html.ValidationMessageFor(m => m.FromName)
+											@*<input type="text" class="form-control input-lg" id="nameinput" placeholder="Name" name="FromName">*@
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											@Html.LabelFor(m => m.FromEmail, new { @class = "col-md-2 control-label" })
+
+											@Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control", placeholder = "example@email.com" })
+											@Html.ValidationMessageFor(m => m.FromEmail)
+											@*<input type="email" class="form-control input-lg" id="emailinput" placeholder="Email" name="VisEmail">*@
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									@Html.LabelFor(m => m.Body, new { @class = "col-md-2 control-label" })
+
+									@*@Html.TextBoxFor(m => m.Body, new { @class = "form-control",  })*@
+									<textarea class="form-control" rows="10" name="Body" placeholder="Message"></textarea>
+									@Html.ValidationMessageFor(m => m.Body)
+									@*<textarea class="form-control" rows="10" name="Body" placeholder="Message"></textarea>*@
+								</div>
+								<div class="form-group">
+
+									@*Do I add confirm statement for input of 7??? generate random numbers between 1-9  add if input equals sum then show submit button*@
+									@*<input type="text" class="form-control input-lg" id="humaninput" placeholder="5 + 2 =" name="human">*@
+								</div>
+								<div class="form-group">
+									@*@if ()*@
+									<input type="submit" class="btn btn-outline-white btn-big" value="Send Email">
+								</div>
+							</form>
+
+						}
+
+
+
+
+
+
+						<!--<span>contact@mysite.com</span>-->
 					</div>
 				</div>
-			</div>
-			<div class="row">
+				@*<div class="col-sm-4">
+					<div class="contact-info clearfix">
+						<i class="fa fa-phone"></i>*@
+				<!--<span>235 214 2326</span>-->
 
-				<div class="col-md-8 col-md-offset-2">
-
-					<div id="result"></div>
-
-					<form id="contact_form" class="contact-form" action="contact.php" method="post">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" class="form-control input-lg" id="nameinput" placeholder="Name" name="name">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="email" class="form-control input-lg" id="emailinput" placeholder="Email" name="email">
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<textarea class="form-control" rows="10" name="message" placeholder="Message"></textarea>
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control input-lg" id="humaninput" placeholder="5 + 2 =" name="human">
-						</div>
-						<div class="form-group">
-							<button id="submit_btn" type="submit" class="btn btn-outline-white btn-big">Submit</button>
-						</div>
-					</form>
-				</div>
 			</div>
 		</div>
+
 	</section>
 	<!-- End of Contact Section -->
 	<!-- Footer -->
@@ -456,14 +372,7 @@
 	<footer class="footer photo-section dark-section light-content">
 		<div class="bg-overlay"></div>
 		<div class="container">
-			<div class="social-icons light-icons">
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
-				<a href="#"><i class="fa fa-pinterest"></i></a>
-				<a href="#"><i class="fa fa-google-plus"></i></a>
-			</div>
-			<p>© 2014 Crafto designed and coded by Pixelglow</p>
+
 		</div>
 	</footer>
 
@@ -473,20 +382,86 @@
 	<!-- End of Footer -->
 	<!-- Bootstrap core JavaScript
 	================================================== -->
+	<!-- BOOTSTRAP MODAL -->
+	@*<div class="modal fade" id="max" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h1 class="modal-title" id="myModalLabel">Max of Five</h1>
+					<div class="col-sm-7 margin-small">
+						<pre class="brush: js;">
+function getFactorial() {
+    $("#factorialResult").html(factorial(parseInt($("#factorialNum").val())));
+}
+
+function factorial(num) {
+    if (num === 0) {
+        return 1;
+    }
+    return num * factorial(num - 1);
+}
+	</pre>
+					</div>
+
+				</div>
+				<div class="modal-body col-sm-12">
+				</div>
+				<div class="modal-footer no-margin">
+				</div>
+			</div>
+		</div>
+	</div>*@
+
+
+
+	<!-- JQuery -->
+	<script src="~/Scripts/jquery-1.10.2.js">type = "text/javascript" ></script>
+
+	<!-- Syntax Highlighter -->
+	@*<script src="~/Scripts/SyntaxHighlighter/shCore.js"></script>
+	<script src="~/Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
+
+	<script>
+		SyntaxHighlighter.all();
+	</script>*@
+
+
+
+
+
+
+
 	<!-- Placed at the end of the document so the pages load faster -->
 
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-	<script src="~/Assets/Html/js/bootstrap.min.js"></script>
-	<script src="~/Assets/Html/js/modernizr.custom.47152.js"></script>
-	<script src="~/Assets/Html/js/modernizr-ie.js"></script>
-	<script src="~/Assets/Html/js/jquery.easing.1.3.min.js"></script>
-	<script src="~/Assets/Html/js/waypoints.min.js"></script>
-	<script src="~/Assets/Html/js/jquery.textrotator.min.js"></script>
-	<script src="~/Assets/Html/js/jquery.simple-text-rotator.min.js"></script>
-	<script src="~/Assets/Html/js/grid.js"></script>
-	<script src="~/Assets/Html/js/jquery.nicescroll.min.js"></script>
-	<script src="~/Assets/Html/js/slick.min.js"></script>
-	<script src="~/Assets/Html/js/scripts.js"></script>
+	<script src="~/Assets/HTML/js/bootstrap.min.js"></script>
+	<script src="~/Assets/HTML/js/modernizr.custom.47152.js"></script>
+	<script src="~/Assets/HTML/js/modernizr-ie.js"></script>
+	<script src="~/Assets/HTML/js/jquery.easing.1.3.min.js"></script>
+	<script src="~/Assets/HTML/js/waypoints.min.js"></script>
+	<script src="~/Assets/HTML/js/jquery.textrotator.min.js"></script>
+	<script src="~/Assets/HTML/js/jquery.simple-text-rotator.min.js"></script>
+	<script src="~/Assets/HTML/js/grid.js"></script>
+	<script src="~/Assets/HTML/js/jquery.nicescroll.min.js"></script>
+	<script src="~/Assets/HTML/js/slick.min.js"></script>
+	<script src="~/Assets/HTML/js/scripts.js"></script>
 
 </body>
 </html>
+
+
+
+@*Errors caught in publishing*@
+			@*scripts.js:74 Uncaught TypeError: $(...).waypoint is not a function
+			at HTMLDocument.<anonymous>	(scripts.js:74)
+	at j (jquery-latest.min.js:2)
+	at Object.fireWith [as resolveWith] (jquery-latest.min.js:2)
+	at Function.ready (jquery-latest.min.js:2)
+	at HTMLDocument.J (jquery-latest.min.js:2)
+				
+				
+				
+				
+		/favicon.ico		
+				*@

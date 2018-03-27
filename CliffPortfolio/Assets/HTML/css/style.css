@@ -1,6 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300);
 
-@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,400italic,600,600italic,700,700italic,300italic,300,200italic,200);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,400italic,600,600italic,700,700italic,300italic,300,200italic,200);
 /*
 Theme Name:    Planus
 Theme URI:     http://pixelglow.ro
@@ -415,8 +415,7 @@ a:hover {
    Welcome Section
    ========================================================================== */
 .welcome-section {
-	background-image: url('../assets/welcome-img.jpg');
-	
+	background-image: url('../assets/CLIFFAWESOME-ADJUSTED1.png');
 	background-attachment: scroll;
 	height: auto;
 	width: 100%;
@@ -1859,13 +1858,13 @@ a:hover {
    Footer Section
    ========================================================================== */
 .footer {
-  width: 100%;
-  min-width: 100%;
-  text-align: center;
-  padding: 60px 0;
-  background-image: url(../assets/welcome-img.jpg);
-  position: relative;
-  z-index: 0;
+	width: 100%;
+	min-width: 100%;
+	text-align: center;
+	padding: 60px 0;
+	background-image: url(../assets/CLIFFAWESOME-ADJUSTED1.png);
+	position: relative;
+	z-index: 0;
 }
 .footer .bg-overlay {
   opacity: 0.6;

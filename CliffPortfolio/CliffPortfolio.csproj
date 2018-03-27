@@ -512,6 +512,16 @@
     <Content Include="Assets\blog bootstrap -bona\single-post-3.html" />
     <Content Include="Assets\blog bootstrap -bona\single-post-3\css\responsive.css" />
     <Content Include="Assets\blog bootstrap -bona\single-post-3\css\styles.css" />
+    <Content Include="Assets\HTML\assets\20171125_095816-bbbb-960x540.png" />
+    <Content Include="Assets\HTML\assets\365728-636190610546181732-16x9-960x540.png" />
+    <Content Include="Assets\HTML\assets\bugtracker-page-001.png" />
+    <Content Include="Assets\HTML\assets\CLIFFAWESOME-ADJUSTED1.png" />
+    <Content Include="Assets\HTML\assets\CliffKoenigsquare12.jpg" />
+    <Content Include="Assets\HTML\assets\CliffKoenigsquare1224.jpg" />
+    <Content Include="Assets\HTML\assets\frustrated-960x540.png" />
+    <Content Include="Assets\HTML\assets\imagebloglayout-resized670-440.png" />
+    <Content Include="Assets\HTML\assets\race_2403_photo_223.jpg" />
+    <Content Include="Assets\HTML\assets\welcome-img111.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -560,6 +570,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Properties\PublishProfiles\CliffBlog - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CliffPortfolio - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CliffPortfolio20180306015731 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CliffPortfolioAnotherTest - Web Deploy.pubxml" />
@@ -605,6 +616,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BlogComment.cs" />
     <Compile Include="Models\CliffBlogPost.cs" />
+    <Compile Include="Models\Email.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ImageUploadValidator.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -612,6 +624,8 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\ComingSoon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
@@ -1083,7 +1097,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Home\Index - Copy.cshtml" />
     <Content Include="Views\CliffBlogPosts\Index - Copy.cshtml" />
     <Content Include="Assets\HTML\js\bootstrap.min.js" />
     <Content Include="Assets\HTML\js\grid.js" />
@@ -1161,7 +1174,6 @@
     <Content Include="Scripts\SyntaxHighlighter\shBrushXml.js" />
     <Content Include="Scripts\SyntaxHighlighter\shCore.js" />
     <Content Include="Scripts\SyntaxHighlighter\shLegacy.js" />
-    <None Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />

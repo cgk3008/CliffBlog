@@ -83,7 +83,8 @@ namespace CliffPortfolio.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                //return View(model);
+                return RedirectToAction("Index", "CliffBlogPosts");
             }
 
             // This doesn't count login failures towards account lockout
