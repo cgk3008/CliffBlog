@@ -13,17 +13,17 @@ namespace CliffPortfolio.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            //return View();
 
-            //return RedirectToAction("Index", "CliffBlogPosts");
+            return RedirectToAction("Index", "CliffBlogPosts");
         }
 
 
 
-        public ActionResult ComingSoon()
-        {
-            return View();
-        }
+        //public ActionResult ComingSoon()
+        //{
+        //    return View();
+        //}
 
         //POST: Email
         [HttpPost]
@@ -55,7 +55,7 @@ namespace CliffPortfolio.Controllers
             Response.Write("alert('Email sent successfully.');");
             Response.Write("</script>");
 
-            return View("Index");
+            return RedirectToAction("Index", "CliffBlogPosts");
         }
 
     }
