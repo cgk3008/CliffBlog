@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters />
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:ckoenig.database.windows.net,1433;          &#xD;&#xA;         Initial Catalog=CliffBlog;  &#xD;&#xA;         User Id = ck3008;&#xD;&#xA;         Password = Reddog12!" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\cgk30\\OneDrive\\Documents\\Visual\ Studio\ 2017\\Projects\\CliffPortfolio\\CliffPortfolio\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>
