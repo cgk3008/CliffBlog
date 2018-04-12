@@ -31,8 +31,8 @@ namespace CliffPortfolio.Controllers
 
             //IQueryable<CliffBlogPost> listPosts = db.Posts.AsQueryable();
             //var listPosts = db.Posts.AsQueryable();
-            //OrderByDescending
-            return View(blogList./*OrderByDescending(p => p.Created).*/ToPagedList(pageNumber, pageSize));
+            // return View(blogList.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
+            return View(blogList.ToPagedList(pageNumber, pageSize));
 
         }
 
