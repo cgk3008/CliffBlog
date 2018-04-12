@@ -80,9 +80,9 @@ namespace CliffPortfolio
             //    consumerKey: "",
             //    consumerSecret: "");
 
-            app.UseFacebookAuthentication(
-                appId: "374809709667414",
-                appSecret: "abbf47506f87604218fe8074eed37c7");
+            //app.UseFacebookAuthentication(
+            //    appId: "374809709667414",
+            //    appSecret: "abbf47506f87604218fe8074eed37c7");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
@@ -91,7 +91,7 @@ namespace CliffPortfolio
             });
             //got google sign to work kind of.  for display name it shows email form and expects email label, then if enter email you signed in with it says already used!!!
 
-            app.UseLinkedInAuthentication("78swvnw58kow6y", "nshaa5dXFpMasTJV6");
+            //app.UseLinkedInAuthentication("78swvnw58kow6y", "nshaa5dXFpMasTJV6");
 
         }
     }
