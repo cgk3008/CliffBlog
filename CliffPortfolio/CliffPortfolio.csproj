@@ -522,6 +522,7 @@
     <Content Include="Assets\HTML\assets\imagebloglayout-resized670-440.png" />
     <Content Include="Assets\HTML\assets\race_2403_photo_223.jpg" />
     <Content Include="Assets\HTML\assets\welcome-img111.jpg" />
+    <Content Include="Assets\Webp.net-resizeimage.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
